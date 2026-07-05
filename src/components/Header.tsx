@@ -122,7 +122,7 @@ export default function Header() {
           <div className="relative border-l border-white/20 pl-4 ml-2 lang-dropdown-container">
             <button
               onClick={() => setLangMenuOpen(!langMenuOpen)}
-              className={`flex items-center space-x-1.5 px-2.5 py-1.5 text-xs font-semibold rounded-md tracking-wider transition-all duration-200 cursor-pointer ${
+              className={`flex items-center space-x-2 px-3 py-2 text-sm font-bold rounded-md tracking-wider transition-all duration-200 cursor-pointer ${
                 isAtTopHome
                   ? "text-white hover:bg-white/10"
                   : "text-[#FAF9F5] hover:bg-white/10"
@@ -131,12 +131,12 @@ export default function Header() {
               aria-expanded={langMenuOpen}
               aria-label="Izvēlēties valodu / Select language"
             >
-              <Globe className="w-4 h-4 text-[#D4AF37]" />
-              <span className="uppercase text-[11px] font-bold">{lang}</span>
+              <Globe className="w-[18px] h-[18px] text-[#D4AF37]" />
+              <span className="uppercase text-[13px] font-bold">{lang}</span>
             </button>
             
             {langMenuOpen && (
-              <div className="absolute right-0 mt-2 w-24 bg-[#0D1B2A] border border-[#234238]/40 rounded-lg shadow-xl py-1 z-50">
+              <div className="absolute right-0 mt-2 w-28 bg-[#0D1B2A] border border-[#234238]/40 rounded-lg shadow-xl py-1 z-50">
                 {languages.map((l) => (
                   <button
                     key={l}
@@ -144,7 +144,7 @@ export default function Header() {
                       setLang(l);
                       setLangMenuOpen(false);
                     }}
-                    className={`w-full text-left px-3 py-1.5 text-xs tracking-wider font-semibold transition-all duration-200 cursor-pointer ${
+                    className={`w-full text-left px-4 py-2 text-sm tracking-wider font-semibold transition-all duration-200 cursor-pointer ${
                       lang === l
                         ? "text-[#D4AF37] bg-white/5 font-bold"
                         : "text-[#FAF9F5] hover:text-[#D4AF37] hover:bg-white/5"
@@ -164,17 +164,17 @@ export default function Header() {
           <div className="relative lang-dropdown-container">
             <button
               onClick={() => setLangMenuOpen(!langMenuOpen)}
-              className="flex items-center space-x-1 px-2.5 py-1.5 text-[11px] font-bold rounded-lg bg-white/5 text-white cursor-pointer"
+              className="flex items-center space-x-1.5 px-3 py-2 text-[13px] font-extrabold rounded-lg bg-white/5 text-white cursor-pointer"
               aria-haspopup="true"
               aria-expanded={langMenuOpen}
               aria-label="Select language"
             >
-              <Globe className="w-3.5 h-3.5 text-[#D4AF37]" />
+              <Globe className="w-4 h-4 text-[#D4AF37]" />
               <span className="uppercase">{lang}</span>
             </button>
             
             {langMenuOpen && (
-              <div className="absolute right-0 mt-2 w-20 bg-[#0D1B2A] border border-[#234238]/40 rounded-lg shadow-2xl py-1 z-50">
+              <div className="absolute right-0 mt-2 w-24 bg-[#0D1B2A] border border-[#234238]/40 rounded-lg shadow-2xl py-1 z-50">
                 {languages.map((l) => (
                   <button
                     key={l}
@@ -182,7 +182,7 @@ export default function Header() {
                       setLang(l);
                       setLangMenuOpen(false);
                     }}
-                    className={`w-full text-center px-3 py-1.5 text-xs tracking-wider font-semibold transition-all duration-200 cursor-pointer ${
+                    className={`w-full text-center px-4 py-2 text-[13px] tracking-wider font-semibold transition-all duration-200 cursor-pointer ${
                       lang === l
                         ? "text-[#D4AF37] bg-white/5 font-extrabold"
                         : "text-white/80 hover:text-[#D4AF37] hover:bg-white/5"

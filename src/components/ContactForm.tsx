@@ -130,11 +130,12 @@ export default function ContactForm({ lang: propLang }: ContactFormProps) {
 
               <div>
                 <label htmlFor="talrunis" className="block text-xs font-bold uppercase tracking-wider text-[#0D1B2A]/70 mb-2">
-                  {currentT.labelPhone}
+                  {currentT.labelPhone} <span className="text-red-500 font-bold">*</span>
                 </label>
                 <input
                   id="talrunis"
                   type="tel"
+                  required
                   value={talrunis}
                   onChange={(e) => setTalrunis(e.target.value)}
                   placeholder={currentT.placeholderPhone}
