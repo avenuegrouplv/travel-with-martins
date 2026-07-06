@@ -11,7 +11,15 @@ const LanguageContext = createContext<LanguageContextProps | undefined>(undefine
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
   const [lang, setLangState] = useState<Language>(() => {
-    const stored = localStorage.getItem("app_lang");
+    if (typeof window !== "undefined") {
+      const params = new URLSearchParams(window.location.search);
+      const queryLang = params.get("lang")?.toUpperCase();
+      if (queryLang === "LV" || queryLang === "EN" || queryLang === "RU") {
+        localStorage.setItem("app_lang", queryLang);
+        return queryLang as Language;
+      }
+    }
+    const stored = typeof window !== "undefined" ? localStorage.getItem("app_lang") : null;
     if (stored === "LV" || stored === "EN" || stored === "RU") {
       return stored as Language;
     }

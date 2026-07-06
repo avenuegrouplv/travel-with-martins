@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { useLanguage } from "../context/LanguageContext";
+import { translations } from "../translations";
 
 interface SEOMetadata {
   title: string;
@@ -206,15 +207,15 @@ export default function SEO() {
     // 6. Set Canonical Link
     updateLink("canonical", absoluteUrl);
 
-    // 7. Set Hreflang Tags (Multilingual SEO)
-    updateLink("alternate", "https://travelwithmartins.lv/", { hreflang: "x-default" });
-    updateLink("alternate", "https://travelwithmartins.lv/", { hreflang: "lv" });
-    updateLink("alternate", "https://travelwithmartins.lv/par-mani", { hreflang: "lv-LV" });
-    updateLink("alternate", "https://travelwithmartins.lv/?lang=en", { hreflang: "en" });
-    updateLink("alternate", "https://travelwithmartins.lv/?lang=ru", { hreflang: "ru" });
+    // 7. Set Hreflang Tags (Multilingual SEO) - Clear previous ones to avoid duplicate accumulation
+    document.querySelectorAll('link[rel="alternate"][hreflang]').forEach((el) => el.remove());
+    updateLink("alternate", `https://travelwithmartins.lv${cleanPath}`, { hreflang: "x-default" });
+    updateLink("alternate", `https://travelwithmartins.lv${cleanPath}`, { hreflang: "lv" });
+    updateLink("alternate", `https://travelwithmartins.lv${cleanPath}?lang=en`, { hreflang: "en" });
+    updateLink("alternate", `https://travelwithmartins.lv${cleanPath}?lang=ru`, { hreflang: "ru" });
 
     // 8. Dynamic JSON-LD Structured Data (Schema.org)
-    const organizationSchema = {
+    const organizationSchema: any = {
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
       "name": "Travel with Martins",
@@ -239,23 +240,114 @@ export default function SEO() {
       ]
     };
 
-    const websiteSchema = {
+    const websiteSchema: any = {
       "@context": "https://schema.org",
       "@type": "WebSite",
       "name": "Travel with Martins",
       "url": "https://travelwithmartins.lv/"
     };
 
-    const webpageSchema = {
+    const webpageSchema: any = {
       "@context": "https://schema.org",
       "@type": "WebPage",
+      "@id": `${absoluteUrl}#webpage`,
       "name": metadata.title,
       "description": metadata.description,
       "url": absoluteUrl,
       "inLanguage": lang.toLowerCase()
     };
 
-    const schemas = [organizationSchema, websiteSchema, webpageSchema];
+    const schemas: any[] = [organizationSchema, websiteSchema, webpageSchema];
+
+    // Add Breadcrumb List Schema if not on home page
+    if (path !== "/") {
+      const pageTitle = metadata.title.split("|")[0].trim();
+      const breadcrumbSchema = {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": lang === "LV" ? "Sākums" : lang === "EN" ? "Home" : "Главная",
+            "item": "https://travelwithmartins.lv/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": pageTitle,
+            "item": absoluteUrl
+          }
+        ]
+      };
+      schemas.push(breadcrumbSchema);
+    }
+
+    // FAQ Page Schema
+    if (path === "/buj") {
+      const faqItems = translations[lang]?.faq?.items || [];
+      if (faqItems.length > 0) {
+        const faqSchema = {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": faqItems.map((item) => ({
+            "@type": "Question",
+            "name": item.question,
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": item.answer
+            }
+          }))
+        };
+        schemas.push(faqSchema);
+      }
+    }
+
+    // Blog / BlogPosting Schema
+    if (path === "/blogs") {
+      const blogPosts = translations[lang]?.blog?.posts || [];
+      if (blogPosts.length > 0) {
+        const blogSchema = {
+          "@context": "https://schema.org",
+          "@type": "Blog",
+          "name": translations[lang]?.blog?.title || "Travel Blog",
+          "description": translations[lang]?.blog?.subtitle || "",
+          "url": absoluteUrl,
+          "blogPost": blogPosts.map((post) => ({
+            "@type": "BlogPosting",
+            "headline": post.title,
+            "description": post.desc,
+            "url": `${absoluteUrl}#${post.id}`,
+            "author": {
+              "@type": "Person",
+              "name": "Mārtiņš Šics"
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Travel with Martins"
+            }
+          }))
+        };
+        schemas.push(blogSchema);
+      }
+    }
+
+    // Service Schema for coaching and mentoring
+    if (path === "/sadarbiba" || path === "/") {
+      const serviceSchema = {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "serviceType": lang === "LV" ? "Ceļojumu plānošana un biznesa mentorings" : lang === "EN" ? "Travel Planning & Business Mentoring" : "Планирование путешествий и менторинг",
+        "provider": {
+          "@type": "LocalBusiness",
+          "name": "Travel with Martins",
+          "image": "https://travelwithmartins.lv/logo.png"
+        },
+        "description": metadata.description,
+        "areaServed": "LV"
+      };
+      schemas.push(serviceSchema);
+    }
 
     // Clean up existing JSON-LD script tags
     document.querySelectorAll('script[type="application/ld+json"]').forEach((el) => el.remove());

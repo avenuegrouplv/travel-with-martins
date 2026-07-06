@@ -399,57 +399,53 @@ export default function Home() {
         {/* Hero Content Overlay */}
         <div className="relative z-10 max-w-4xl mx-auto px-6 text-center text-white flex flex-col items-center">
           <AnimatePresence mode="wait">
-            {currentSlide >= 2 && (
-              <motion.div
-                key={currentSlide}
-                initial={{ opacity: 0, y: 25 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -15 }}
-                transition={{ duration: 0.8, ease: [0.215, 0.61, 0.355, 1] }}
-                className="w-full max-w-3xl space-y-4 flex flex-col items-center"
-              >
-                <span className="bg-[#D4AF37] text-[#0D1B2A] text-[9px] md:text-[10px] font-black tracking-widest uppercase px-3 py-1 rounded-full shadow-md inline-block">
-                  Travel with Martins
-                </span>
-                
-                <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display font-black tracking-tight leading-[1.2] uppercase text-center drop-shadow-xl">
-                  {renderHighlightedText(
-                    t.home.heroSlides[currentSlide - 2]?.text || "",
-                    t.home.heroSlides[currentSlide - 2]?.highlights || []
-                  )}
-                </h1>
-                
-                <div className="w-12 h-0.5 bg-[#D4AF37] mx-auto opacity-80" />
-              </motion.div>
-            )}
+            <motion.div
+              key={currentSlide}
+              initial={{ opacity: 0, y: 25 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -15 }}
+              transition={{ duration: 0.8, ease: [0.215, 0.61, 0.355, 1] }}
+              className="w-full max-w-3xl space-y-4 flex flex-col items-center"
+            >
+              <span className="bg-[#D4AF37] text-[#0D1B2A] text-[9px] md:text-[10px] font-black tracking-widest uppercase px-3 py-1 rounded-full shadow-md inline-block">
+                Travel with Martins
+              </span>
+              
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display font-black tracking-tight leading-[1.2] uppercase text-center drop-shadow-xl">
+                {renderHighlightedText(
+                  t.home.heroSlides[currentSlide]?.text || "",
+                  t.home.heroSlides[currentSlide]?.highlights || []
+                )}
+              </h1>
+              
+              <div className="w-12 h-0.5 bg-[#D4AF37] mx-auto opacity-80" />
+            </motion.div>
           </AnimatePresence>
         </div>
 
         {/* Constant buttons on the left side of the background images */}
-        {currentSlide !== 0 && (
-          <div className="absolute bottom-24 left-6 md:left-12 z-20 flex flex-col sm:flex-row gap-4">
-            <button
-              onClick={() => {
-                const target = document.getElementById("sadarbiba-section");
-                if (target) target.scrollIntoView({ behavior: "smooth" });
-              }}
-              className="px-8 py-4 bg-[#D4AF37] text-[#0D1B2A] font-bold text-xs uppercase tracking-widest rounded-none hover:bg-white hover:text-[#0D1B2A] transition-all flex items-center justify-center gap-2 cursor-pointer shadow-lg"
-            >
-              <span>{lang === "LV" ? "Uzzini, kā tas darbojas" : lang === "EN" ? "Find out how it works" : "Узнайте, как это работает"}</span>
-              <ArrowRight className="w-4 h-4" />
-            </button>
-            <button
-              onClick={() => {
-                const target = document.getElementById("sazina");
-                if (target) target.scrollIntoView({ behavior: "smooth" });
-              }}
-              className="px-8 py-4 bg-white/10 border border-white/30 text-white font-bold text-xs uppercase tracking-widest rounded-none hover:bg-white hover:text-[#0D1B2A] transition-all flex items-center justify-center gap-2 shadow-lg cursor-pointer animate-pulse hover:animate-none"
-            >
-              <span>{lang === "LV" ? "Pieteikties Zoom prezentācijai" : lang === "EN" ? "Apply for Zoom presentation" : "Записаться на презентацию Zoom"}</span>
-              <ArrowRight className="w-4 h-4" />
-            </button>
-          </div>
-        )}
+        <div className="absolute bottom-24 left-6 md:left-12 z-20 flex flex-col sm:flex-row gap-4">
+          <button
+            onClick={() => {
+              const target = document.getElementById("sadarbiba-section");
+              if (target) target.scrollIntoView({ behavior: "smooth" });
+            }}
+            className="px-8 py-4 bg-[#D4AF37] text-[#0D1B2A] font-bold text-xs uppercase tracking-widest rounded-none hover:bg-white hover:text-[#0D1B2A] transition-all flex items-center justify-center gap-2 cursor-pointer shadow-lg"
+          >
+            <span>{lang === "LV" ? "Uzzini, kā tas darbojas" : lang === "EN" ? "Find out how it works" : "Узнайте, как это работает"}</span>
+            <ArrowRight className="w-4 h-4" />
+          </button>
+          <button
+            onClick={() => {
+              const target = document.getElementById("sazina");
+              if (target) target.scrollIntoView({ behavior: "smooth" });
+            }}
+            className="px-8 py-4 bg-white/10 border border-white/30 text-white font-bold text-xs uppercase tracking-widest rounded-none hover:bg-white hover:text-[#0D1B2A] transition-all flex items-center justify-center gap-2 shadow-lg cursor-pointer animate-pulse hover:animate-none"
+          >
+            <span>{lang === "LV" ? "Pieteikties Zoom prezentācijai" : lang === "EN" ? "Apply for Zoom presentation" : "Записаться на презентацию Zoom"}</span>
+            <ArrowRight className="w-4 h-4" />
+          </button>
+        </div>
 
         {/* Slide dots indicators in the bottom-right corner on mobile, bottom-left on desktop */}
         <div className="absolute bottom-16 right-6 sm:bottom-10 sm:left-6 sm:right-auto md:left-12 z-20 flex space-x-2">

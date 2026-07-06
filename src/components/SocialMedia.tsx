@@ -244,8 +244,9 @@ export default function SocialMedia() {
                 <div className="relative aspect-video overflow-hidden bg-zinc-100">
                   <img
                     src={post.image}
-                    alt="Facebook Post"
+                    alt={`${post.author} - Facebook ieraksts par ceļojumu pieredzi`}
                     loading="lazy"
+                    decoding="async"
                     referrerPolicy="no-referrer"
                     className="w-full h-full object-cover group-hover:scale-102 transition-transform duration-500"
                   />
@@ -312,8 +313,9 @@ export default function SocialMedia() {
                 <div className="relative aspect-video overflow-hidden bg-black">
                   <img
                     src={post.image}
-                    alt="TikTok Cover"
+                    alt={`${post.author} (${post.handle}) - TikTok video par ceļojumiem un brīvu dzīvesveidu`}
                     loading="lazy"
+                    decoding="async"
                     referrerPolicy="no-referrer"
                     className="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-500"
                   />
