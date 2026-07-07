@@ -1,5 +1,6 @@
 fragment TranslationsParts on Translations {
   __typename
+  title
   header {
     __typename
     home
@@ -97,21 +98,21 @@ fragment TranslationsParts on Translations {
         duration
         tags
       }
-      grie_ija {
+      griekija {
         __typename
         name
         description
         duration
         tags
       }
-      e_ipte {
+      egipte {
         __typename
         name
         description
         duration
         tags
       }
-      sp_nija {
+      spanija {
         __typename
         name
         description
@@ -250,6 +251,7 @@ fragment TranslationsParts on Translations {
 
 fragment DestinationsParts on Destinations {
   __typename
+  title
   destinations {
     __typename
     id

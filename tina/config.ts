@@ -26,6 +26,7 @@ export default defineConfig({
         path: "content/translations",
         format: "json",
         fields: [
+          { type: "string", name: "title", label: "Valodas nosaukums (piem. Latviešu)", required: true },
           {
             type: "object",
             name: "header",
@@ -404,6 +405,7 @@ export default defineConfig({
         path: "content/destinations",
         format: "json",
         fields: [
+          { type: "string", name: "title", label: "Saraksta nosaukums", required: true },
           {
             type: "object",
             name: "destinations",

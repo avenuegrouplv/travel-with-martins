@@ -22,7 +22,13 @@ var config_default = defineConfig({
         label: "Translations (Valodas)",
         path: "content/translations",
         format: "json",
+        ui: {
+          itemProps: (item) => {
+            return { label: item?.title || item?._sys?.filename || "Valoda" };
+          }
+        },
         fields: [
+          { type: "string", name: "title", label: "Valodas nosaukums (piem. Latvie\u0161u)", required: true },
           {
             type: "object",
             name: "header",
@@ -173,8 +179,7 @@ var config_default = defineConfig({
                   },
                   {
                     type: "object",
-                    name: "grie_ija",
-                    nameOverride: "grie\u0137ija",
+                    name: "griekija",
                     label: "Grie\u0137ija (Greece)",
                     fields: [
                       { type: "string", name: "name", label: "Name" },
@@ -185,8 +190,7 @@ var config_default = defineConfig({
                   },
                   {
                     type: "object",
-                    name: "e_ipte",
-                    nameOverride: "\u0113\u0123ipte",
+                    name: "egipte",
                     label: "\u0112\u0123ipte (Egypt)",
                     fields: [
                       { type: "string", name: "name", label: "Name" },
@@ -197,8 +201,7 @@ var config_default = defineConfig({
                   },
                   {
                     type: "object",
-                    name: "sp_nija",
-                    nameOverride: "sp\u0101nija",
+                    name: "spanija",
                     label: "Sp\u0101nija (Spain)",
                     fields: [
                       { type: "string", name: "name", label: "Name" },
@@ -403,7 +406,13 @@ var config_default = defineConfig({
         label: "Destinations Cards (Galam\u0113r\u0137u kart\u012Btes)",
         path: "content/destinations",
         format: "json",
+        ui: {
+          itemProps: (item) => {
+            return { label: item?.title || item?._sys?.filename || "Galam\u0113r\u0137i" };
+          }
+        },
         fields: [
+          { type: "string", name: "title", label: "Saraksta nosaukums", required: true },
           {
             type: "object",
             name: "destinations",

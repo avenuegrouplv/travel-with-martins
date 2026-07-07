@@ -174,21 +174,21 @@ type TranslationsDestinationsItemsTurcija {
   tags: [String]
 }
 
-type TranslationsDestinationsItemsGrie_ija {
+type TranslationsDestinationsItemsGriekija {
   name: String
   description: String
   duration: String
   tags: [String]
 }
 
-type TranslationsDestinationsItemsE_ipte {
+type TranslationsDestinationsItemsEgipte {
   name: String
   description: String
   duration: String
   tags: [String]
 }
 
-type TranslationsDestinationsItemsSp_nija {
+type TranslationsDestinationsItemsSpanija {
   name: String
   description: String
   duration: String
@@ -232,9 +232,9 @@ type TranslationsDestinationsItemsAae {
 
 type TranslationsDestinationsItems {
   turcija: TranslationsDestinationsItemsTurcija
-  grie_ija: TranslationsDestinationsItemsGrie_ija
-  e_ipte: TranslationsDestinationsItemsE_ipte
-  sp_nija: TranslationsDestinationsItemsSp_nija
+  griekija: TranslationsDestinationsItemsGriekija
+  egipte: TranslationsDestinationsItemsEgipte
+  spanija: TranslationsDestinationsItemsSpanija
   kipra: TranslationsDestinationsItemsKipra
   taizeme: TranslationsDestinationsItemsTaizeme
   maldivu_salas: TranslationsDestinationsItemsMaldivu_salas
@@ -356,6 +356,7 @@ type TranslationsCookieNotice {
 }
 
 type Translations implements Node & Document {
+  title: String!
   header: TranslationsHeader
   home: TranslationsHome
   collab: TranslationsCollab
@@ -462,21 +463,21 @@ input TranslationsDestinationsItemsTurcijaFilter {
   tags: StringFilter
 }
 
-input TranslationsDestinationsItemsGrie_ijaFilter {
+input TranslationsDestinationsItemsGriekijaFilter {
   name: StringFilter
   description: StringFilter
   duration: StringFilter
   tags: StringFilter
 }
 
-input TranslationsDestinationsItemsE_ipteFilter {
+input TranslationsDestinationsItemsEgipteFilter {
   name: StringFilter
   description: StringFilter
   duration: StringFilter
   tags: StringFilter
 }
 
-input TranslationsDestinationsItemsSp_nijaFilter {
+input TranslationsDestinationsItemsSpanijaFilter {
   name: StringFilter
   description: StringFilter
   duration: StringFilter
@@ -520,9 +521,9 @@ input TranslationsDestinationsItemsAaeFilter {
 
 input TranslationsDestinationsItemsFilter {
   turcija: TranslationsDestinationsItemsTurcijaFilter
-  grie_ija: TranslationsDestinationsItemsGrie_ijaFilter
-  e_ipte: TranslationsDestinationsItemsE_ipteFilter
-  sp_nija: TranslationsDestinationsItemsSp_nijaFilter
+  griekija: TranslationsDestinationsItemsGriekijaFilter
+  egipte: TranslationsDestinationsItemsEgipteFilter
+  spanija: TranslationsDestinationsItemsSpanijaFilter
   kipra: TranslationsDestinationsItemsKipraFilter
   taizeme: TranslationsDestinationsItemsTaizemeFilter
   maldivu_salas: TranslationsDestinationsItemsMaldivu_salasFilter
@@ -644,6 +645,7 @@ input TranslationsCookieNoticeFilter {
 }
 
 input TranslationsFilter {
+  title: StringFilter
   header: TranslationsHeaderFilter
   home: TranslationsHomeFilter
   collab: TranslationsCollabFilter
@@ -679,6 +681,7 @@ type DestinationsDestinations {
 }
 
 type Destinations implements Node & Document {
+  title: String!
   destinations: [DestinationsDestinations]
   id: ID!
   _sys: SystemInfo!
@@ -707,6 +710,7 @@ input DestinationsDestinationsFilter {
 }
 
 input DestinationsFilter {
+  title: StringFilter
   destinations: DestinationsDestinationsFilter
 }
 
@@ -828,21 +832,21 @@ input TranslationsDestinationsItemsTurcijaMutation {
   tags: [String]
 }
 
-input TranslationsDestinationsItemsGrie_ijaMutation {
+input TranslationsDestinationsItemsGriekijaMutation {
   name: String
   description: String
   duration: String
   tags: [String]
 }
 
-input TranslationsDestinationsItemsE_ipteMutation {
+input TranslationsDestinationsItemsEgipteMutation {
   name: String
   description: String
   duration: String
   tags: [String]
 }
 
-input TranslationsDestinationsItemsSp_nijaMutation {
+input TranslationsDestinationsItemsSpanijaMutation {
   name: String
   description: String
   duration: String
@@ -886,9 +890,9 @@ input TranslationsDestinationsItemsAaeMutation {
 
 input TranslationsDestinationsItemsMutation {
   turcija: TranslationsDestinationsItemsTurcijaMutation
-  grie_ija: TranslationsDestinationsItemsGrie_ijaMutation
-  e_ipte: TranslationsDestinationsItemsE_ipteMutation
-  sp_nija: TranslationsDestinationsItemsSp_nijaMutation
+  griekija: TranslationsDestinationsItemsGriekijaMutation
+  egipte: TranslationsDestinationsItemsEgipteMutation
+  spanija: TranslationsDestinationsItemsSpanijaMutation
   kipra: TranslationsDestinationsItemsKipraMutation
   taizeme: TranslationsDestinationsItemsTaizemeMutation
   maldivu_salas: TranslationsDestinationsItemsMaldivu_salasMutation
@@ -1010,6 +1014,7 @@ input TranslationsCookieNoticeMutation {
 }
 
 input TranslationsMutation {
+  title: String
   header: TranslationsHeaderMutation
   home: TranslationsHomeMutation
   collab: TranslationsCollabMutation
@@ -1034,6 +1039,7 @@ input DestinationsDestinationsMutation {
 }
 
 input DestinationsMutation {
+  title: String
   destinations: [DestinationsDestinationsMutation]
 }
 

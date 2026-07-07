@@ -8,6 +8,7 @@ export function gql(strings, ...args) {
 export const TranslationsPartsFragmentDoc = gql`
     fragment TranslationsParts on Translations {
   __typename
+  title
   header {
     __typename
     home
@@ -105,21 +106,21 @@ export const TranslationsPartsFragmentDoc = gql`
         duration
         tags
       }
-      grie_ija {
+      griekija {
         __typename
         name
         description
         duration
         tags
       }
-      e_ipte {
+      egipte {
         __typename
         name
         description
         duration
         tags
       }
-      sp_nija {
+      spanija {
         __typename
         name
         description
@@ -259,6 +260,7 @@ export const TranslationsPartsFragmentDoc = gql`
 export const DestinationsPartsFragmentDoc = gql`
     fragment DestinationsParts on Destinations {
   __typename
+  title
   destinations {
     __typename
     id
@@ -422,7 +424,7 @@ const generateRequester = (client) => {
 export const ExperimentalGetTinaClient = () => getSdk(
   generateRequester(
     createClient({
-      url: "https://content.tinajs.io/2.4/content/00000000-0000-0000-0000-000000000000/github/main",
+      url: "http://localhost:4001/graphql",
       queries
     })
   )
