@@ -429,7 +429,7 @@ export const translations: Record<"LV" | "EN" | "RU", TranslationSchema> = {
     },
     contactForm: {
       badge: "Saziņa un konsultācijas",
-      title: "Sazinies ar Mārtiņu Šicu",
+      title: "Sazinies ar Mārtiņu",
       subtitle: "Aizpildi formu zemāk un es sazināšos ar Tevi tuvāko 3 stundu laikā, lai atbildētu uz visiem jautājumiem.",
       successTitle: "Sūtījums saņemts!",
       successDesc: "Paldies! Tava ziņa ir veiksmīgi nosūtīta.",
@@ -717,7 +717,7 @@ export const translations: Record<"LV" | "EN" | "RU", TranslationSchema> = {
     },
     contactForm: {
       badge: "Contact & Consultations",
-      title: "Get in Touch with Martins Sics",
+      title: "Get in Touch with Martins",
       subtitle: "Fill out the form below and I will contact you within the next 3 hours to answer all your questions.",
       successTitle: "Message received!",
       successDesc: "Thank you! Your message has been sent successfully.",
@@ -1005,7 +1005,7 @@ export const translations: Record<"LV" | "EN" | "RU", TranslationSchema> = {
     },
     contactForm: {
       badge: "Связь и консультации",
-      title: "Связаться с Мартиньшем Шицсом",
+      title: "Связаться с Мартиньшем",
       subtitle: "Заполните форму ниже, и я свяжусь с вами в течение следующих 3 часов, чтобы ответить на все ваши вопросы.",
       successTitle: "Сообщение получено!",
       successDesc: "Спасибо! Ваше сообщение успешно отправлено.",

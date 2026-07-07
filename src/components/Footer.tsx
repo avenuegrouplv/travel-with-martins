@@ -101,6 +101,9 @@ export default function Footer() {
             {t.footer.contactsTitle}
           </h4>
           <div className="space-y-4 text-sm text-[#B2B0A9] w-full">
+            <div className="text-white font-semibold text-left sm:text-right">
+              Mārtiņš Šics
+            </div>
             <div className="flex items-center gap-2 justify-start sm:justify-end">
               <Phone className="w-4 h-4 text-[#D4AF37]" aria-hidden="true" />
               <a href="tel:+37127061369" className="hover:text-white transition-colors">

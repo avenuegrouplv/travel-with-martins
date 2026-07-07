@@ -29,9 +29,9 @@ export default function PrivacyPolicyModal({ isOpen, onClose }: ModalProps) {
             <h4 className="font-display font-bold text-[#0D1B2A] text-lg">1. Datu pārzinis</h4>
             <div className="bg-[#F2ECE0]/40 p-4 rounded-xl border border-[#EAE6DD] space-y-1">
               <p><strong>Pašnodarbināta persona:</strong> Mārtiņš Šics</p>
-              <p><strong>Reģistrācijas numurs:</strong> 29017912210</p>
+              <p><strong>Reģistrācijas numurs:</strong> 29017910502</p>
               <p className="pt-2"><strong>Kontakti:</strong></p>
-              <p>Juridiskā adrese: Rīga, Brīvības gatve 201, LV-1050</p>
+              <p>Juridiskā adrese: Pionieru iela 65, Jaunolaine,<br />Olaines novads, LV-2127</p>
               <p>E-pasts: <a href="mailto:travelwithmartinss@gmail.com" className="text-[#F87E2E] hover:underline font-semibold">travelwithmartinss@gmail.com</a></p>
               <p>Tālrunis: <a href="tel:+37127061369" className="text-[#F87E2E] hover:underline font-semibold">+371 27061369</a></p>
             </div>
@@ -184,9 +184,9 @@ export default function PrivacyPolicyModal({ isOpen, onClose }: ModalProps) {
             <h4 className="font-display font-bold text-[#0D1B2A] text-lg">1. Контроллер данных</h4>
             <div className="bg-[#F2ECE0]/40 p-4 rounded-xl border border-[#EAE6DD] space-y-1">
               <p><strong>Самозанятое лицо:</strong> Mārtiņš Šics (бренд "Travel with Martins")</p>
-              <p><strong>Регистрационный номер:</strong> 29017912210</p>
+              <p><strong>Регистрационный номер:</strong> 29017910502</p>
               <p className="pt-2"><strong>Контакты:</strong></p>
-              <p>Юридический адрес: Рига, Brīvības gatve 201, LV-1050</p>
+              <p>Юридический адрес: Pionieru iela 65, Jaunolaine,<br />Olaines novads, LV-2127</p>
               <p>Эл. почта: <a href="mailto:travelwithmartinss@gmail.com" className="text-[#F87E2E] hover:underline font-semibold">travelwithmartinss@gmail.com</a></p>
               <p>Телефон: <a href="tel:+37127061369" className="text-[#F87E2E] hover:underline font-semibold">+371 27061369</a></p>
             </div>
@@ -322,10 +322,10 @@ export default function PrivacyPolicyModal({ isOpen, onClose }: ModalProps) {
           <section className="space-y-2">
             <h4 className="font-display font-bold text-[#0D1B2A] text-lg">1. Data Controller</h4>
             <div className="bg-[#F2ECE0]/40 p-4 rounded-xl border border-[#EAE6DD] space-y-1">
-              <p><strong>Self-employed person:</strong> Mārtiņš Šics (brand "Travel with Martins")</p>
-              <p><strong>Registration number:</strong> 29017912210</p>
-              <p className="pt-2"><strong>Contacts:</strong></p>
-              <p>Legal address: Riga, Brīvības gatve 201, LV-1050</p>
+                <p><strong>Self-employed person:</strong> Mārtiņš Šics (brand "Travel with Martins")</p>
+                <p><strong>Registration number:</strong> 29017910502</p>
+                <p className="pt-2"><strong>Contacts:</strong></p>
+                <p>Legal address: Pionieru iela 65, Jaunolaine,<br />Olaines novads, LV-2127</p>
               <p>E-mail: <a href="mailto:travelwithmartinss@gmail.com" className="text-[#F87E2E] hover:underline font-semibold">travelwithmartinss@gmail.com</a></p>
               <p>Phone: <a href="tel:+37127061369" className="text-[#F87E2E] hover:underline font-semibold">+371 27061369</a></p>
             </div>

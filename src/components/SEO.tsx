@@ -153,11 +153,11 @@ export default function SEO() {
     const absoluteUrl = `https://travelwithmartins.lv${cleanPath}`;
     updateMeta("property", "og:url", absoluteUrl);
 
-    // Logo image is highly optimized for Open Graph
-    const ogImage = "https://travelwithmartins.lv/logo.png";
+    // Logo image is highly optimized for Open Graph (WhatsApp/Telegram square preview)
+    const ogImage = "https://travelwithmartins.lv/og-image.png?v=5";
     updateMeta("property", "og:image", ogImage);
-    updateMeta("property", "og:image:width", "1200");
-    updateMeta("property", "og:image:height", "630");
+    updateMeta("property", "og:image:width", "256");
+    updateMeta("property", "og:image:height", "256");
     updateMeta("property", "og:image:type", "image/png");
     updateMeta("property", "og:image:alt", "Travel with Martins Logo");
     updateMeta("property", "og:site_name", "Travel with Martins");
@@ -177,7 +177,7 @@ export default function SEO() {
     });
 
     // 5. Update Twitter Card tags
-    updateMeta("name", "twitter:card", "summary_large_image");
+    updateMeta("name", "twitter:card", "summary");
     updateMeta("name", "twitter:title", metadata.title);
     updateMeta("name", "twitter:description", metadata.description);
     updateMeta("name", "twitter:image", ogImage);
@@ -228,9 +228,9 @@ export default function SEO() {
       "email": "info@travelwithmartins.lv",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "Brīvības gatve 201",
-        "addressLocality": "Rīga",
-        "postalCode": "LV-1050",
+        "streetAddress": "Pionieru iela 65, Jaunolaine",
+        "addressLocality": "Olaines novads",
+        "postalCode": "LV-2127",
         "addressCountry": "LV"
       },
       "priceRange": "$$",
