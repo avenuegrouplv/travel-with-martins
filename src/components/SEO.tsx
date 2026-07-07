@@ -154,7 +154,7 @@ export default function SEO() {
     updateMeta("property", "og:url", absoluteUrl);
 
     // Logo image is highly optimized for Open Graph (WhatsApp/Telegram square preview)
-    const ogImage = "https://travelwithmartins.lv/og-image.png?v=5";
+    const ogImage = "https://travelwithmartins.lv/og-image.png?v=12";
     updateMeta("property", "og:image", ogImage);
     updateMeta("property", "og:image:width", "256");
     updateMeta("property", "og:image:height", "256");
