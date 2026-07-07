@@ -1,0 +1,288 @@
+{
+  "header": {
+    "home": "SĀKUMS",
+    "collab": "KĀ NOTIEK SADARBĪBA",
+    "destinations": "GALAMĒRĶI",
+    "faq": "BUJ",
+    "blog": "BLOGS",
+    "contacts": "KONTAKTI",
+    "contactBtn": "Sazināties"
+  },
+  "home": {
+    "heroSlides": [
+      {
+        "title": "Ceļo patstāvīgi un nopelni",
+        "text": "Sāc ceļot patstāvīgi un veido savu brīvo dzīvesveidu ar papildu ienākumiem",
+        "highlights": ["ceļot patstāvīgi", "brīvo dzīvesveidu", "papildu ienākumiem"]
+      },
+      {
+        "title": "Dzīvesveida maiņa",
+        "text": "Atklāj, kā ceļošanu pārvērst par savu dzīvesveidu un reālu papildu ienākumu avotu",
+        "highlights": ["dzīvesveidu", "papildu ienākumu"]
+      },
+      {
+        "title": "Personīgs mentorings",
+        "text": "Saņem personīgu mentora atbalstu, lai ceļotu patstāvīgi un veidotu savu biznesu",
+        "highlights": ["mentora atbalstu", "savu biznesu"]
+      },
+      {
+        "title": "Brīvība bez robežām",
+        "text": "Pievienojies kopienai, lai kopā ceļotu bez robežām, gūtu brīvību un pelnītu patstāvīgi",
+        "highlights": ["Pievienojies kopienai", "bez robežām", "pelnītu patstāvīgi"]
+      },
+      {
+        "title": "Finansiāla neatkarība",
+        "text": "Lauz aizspriedumus par dārgu atpūtu un dodies savā ceļā uz finansiālu brīvību",
+        "highlights": ["Lauz aizspriedumus", "finansiālu brīvību"]
+      }
+    ],
+    "quickStats": {
+      "countries": "Apmeklētās valstis",
+      "projects": "Veidotie maršruti",
+      "clients": "Laimīgi klienti",
+      "rating": "Klientu vērtējums"
+    },
+    "aboutBadge": "Par projektu",
+    "aboutTitle": "MANS STĀSTS & MISIJA",
+    "aboutSubtitle": "KĀPĒC TRAVEL WITH MARTINS?",
+    "aboutIntro": "Mani sauc Mārtiņš. Es vienmēr esmu meklējis iespējas, kas ļauj cilvēkiem dzīvot pilnvērtīgāk, gudrāk un ar lielāku izvēles brīvību.",
+    "aboutBody": "2018. gadā es pievērsos ceļojumu nozarei. Kopš tā laika esmu iepazinis ne tikai skaistas pasaules vietas, bet arī cilvēkus, kultūras un iespējas, kuras ceļošana var sniegt ikvienam. Ar laiku sapratu, ka ceļojumi nav tikai atpūta. Tie paplašina redzesloku, palīdz iegūt jaunus draugus, attīsta domāšanu un bieži vien pilnībā maina skatījumu uz dzīvi.",
+    "aboutQuote": "Esmu radījis projektu Travel with Martins, kurā es palīdzu cilvēkiem mainīt dzīvesveidu un ceļot vairāk, izvēlēties piemērotākos galamērķus, kas dod iespēju dzīvē iegūt lielāku brīvību un vienlaikus arī papildus nopelnīt.",
+    "advantagesBadge": "Tavas priekšrocības",
+    "advantagesTitle": "KĀPĒC IZVĒLĒTIES ŠO IESPĒJU?",
+    "advantages": [
+      {
+        "title": "Izdevīgākas ceny",
+        "desc": "Piekļūsti slēgtiem piedāvājumiem, kurus neatradīsi parastajās rezervēšanas vietnēs. Ietaupi naudu katrā braucienā."
+      },
+      {
+        "title": "Mentora atbalsts",
+        "desc": "Esmu Tavs personīgais gids un padomdevējs. Palīdzēšu ar padomiem, ieteikumiem un atbildēšu uz visiem jautājumiem."
+      },
+      {
+        "title": "Brīvība & ienākumi",
+        "desc": "Tā nav tikai ceļošana – tā ir iespēja veidot savu biznesu, strādāt no jebkuras vietas pasaulē un gūt papildu ienākumus."
+      },
+      {
+        "title": "Kopiena & tīklošanās",
+        "desc": "Pievienojies līdzīgi domājošu cilvēku kopienai, kuri mīl ceļot, dalās pieredzē un iedvesmo viens otru jauniem sasniegumiem."
+      }
+    ],
+    "stepsBadge": "Tikai 4 vienkārši soļi",
+    "stepsTitle": "KĀ SĀKT SADARBĪBU?",
+    "stepsSubtitle": "Ceļš uz Tavu sapņu ceļojumu un jaunu dzīvesveidu ir vieglāks nekā Tu domā. Sāc jau šodien!",
+    "steps": [
+      { "title": "Piesakies prezentācijai", "desc": "Izvēlies sev ērtāko laiku un piesakies bezmaksas tiešsaistes prezentācijai." },
+      { "title": "Gūsti skaidrību", "desc": "Prezentācijas laikā uzzini visu par platformas darbību un priekšrocībām." },
+      { "title": "Individuāla saruna", "desc": "Saskaņosim individuālu tikšanos, lai pielāgotu labākos risinājumus tieši Tev." },
+      { "title": "Sāc ceļot & pelnīt", "desc": "Pieņem lēmumu un pievienojies mūsu komandai, lai ceļotu izdevīgāk un veidotu savu biznesu." }
+    ],
+    "reviewsBadge": "Klientu atsauksmes",
+    "reviewsTitle": "KO SAKA CITI CEĻOTĀJI?",
+    "reviews": [
+      { "author": "Jānis Bērziņš", "role": "Uzņēmējs", "text": "Pateicoties Mārtiņa atbalstam un ieteikumiem, mūsu ģimenes ceļojums uz Turciju bija ne tikai lētāks, bet arī daudz labāk organizēts. Lieliska sadarbība un profesionāla pieeja!" },
+      { "author": "Laura Kalniņa", "role": "Mārketinga speciāliste", "text": "Es vienmēr esmu gribējusi ceļot vairāk, bet baidījos no lielām izmaksām. Šis projekts pilnībā mainīja manu skatījumu! Tagad varu atļauties ceļot 3-4 reizes gadā un vēl gūt ienākumus." },
+      { "author": "Andris Zariņš", "role": "Frīlancers", "text": "Lieliska platforma un vēl labāks mentors! Mārtiņš vienmēr palīdz ar noderīgiem padomiem. Ienākumu gūšanas iespēja ļauj man strādāt no jebkuras pasaules malas." },
+      { "author": "Kristīne Ozola", "role": "Skolotāja", "text": "Sākumā biju skeptiska, bet pēc bezmaksas Zoom prezentācijas sapratu, ka šī ir reāla iespēja. Esmu ļoti apmierināta ar ietaupījumu rezervācijām un draudzīgo kopienu!" }
+    ],
+    "instaTitle": "Mūsu ceļojumu mirkļi",
+    "instaSubtitle": "Seko līdzi piedzīvojumiem un smelies iedvesmu nākamajiem galamērķiem"
+  },
+  "collab": {
+    "badge": "Sadarbības process",
+    "title": "Kā notiek sadarbība?",
+    "subtitle": "Neatkarīgi no tā, vai meklē savu nākamo ceļojumu vai vienkārši vēlies uzzināt vairāk par iespējām, process ir vienkāršs, brīvs un caurspīdīgs.",
+    "steps": [
+      {
+        "title": "Piesakies Zoom prezentācijai",
+        "desc": "Izvēlies sev ērtāko laiku un piesakies tiešsaistes prezentācijai, lai uzzinātu vairāk par piedāvātajām ceļojumu un izaugsmes iespējām. Šī tikšanās ir lielisks pirmais solis, lai gūtu vispārēju priekšstatu par to, kā es strādāju un kādu vērtību Tu vari iegūt. Prezentācijas laikā es ne tikai stāstu par aizraujošiem galamērķiem, bet arī par veidiem, kā ceļot ekonomiski izdevīgāk. Reģistrācijas process aizņem vien pāris sekundes, un saite uz tikšanos tiks nosūtīta tieši uz Tavu e-pastu. Tev nav nepieciešamas nekādas iepriekšējas zināšanas vai sagatavošanās – vienkārši pieslēdzies un iedvesmojies jaunām iespējām."
+      },
+      {
+        "title": "Iepazīsties ar informāciju",
+        "desc": "Prezentācijas laikā gūsti pilnvērtīgu, uzskatāmu priekšstatu par procesiem un droši uzdod visus sev interesējošos jautājumus. Es detalizēti pastāstīšu par pārbaudītām ceļojumu platformām, īpašajiem piedāvājumiem un manu individuālo atbalsta sistēmu. Tu redzēsi reālus piemērus, kā cilvēki visā pasaulē jau šobrīd ceļo biežāk un gudrāk, apvienojot vaļasprieku ar ienākumu gūšanu. Tikšanās norit brīvā, draudzīgā atmosfērā, kurā katra dalībnieka viedoklis un jautājums ir svarīgs. Tas ir labākais vai drošākais veids, kā kliedēt šaubas un uzzināt patiesību tieši no pirmavota."
+      },
+      {
+        "title": "Rezervē individuālu sarunu",
+        "desc": "Pēc prezentācijas varam aprunāties individuāli, lai detalizētāk pielāgotu risinājumus tieši Tavām vēlmēm un personīgajiem mērķiem. Katram no mums ir atšķirīgs dzīves ritms, budžets un ceļojumu sapņi, tāpēc individuālā saruna palīdz atrast tieši Tev vispiemērotāko ceļu. Sarunā varam izrunāt konkrētus galamērķus, izmaksu tāmes vai izveidot personalizētu rīcības plānu. Šī saruna is pilnīgi konfidenciāla un ir vērsta uz Tavu personīgo izaugsmi un ērtībām. Mana prioritāte ir sniegt Tev maksimālu atbalstu, lai Tu justos droši par katru nākamo soli."
+      },
+      {
+        "title": "Pieņem informētu lēmumu",
+        "desc": "Izvērtē iegūto informāciju un pieņem galīgo lēmumu pilnīgi patstāvīgi – bez jebkāda steidzināšanas, spiediena vai uzbāzības. Es ticu, ka labākie lēmumi ir tie, kas pieņemti ar mierīgu prātu un pilnīgu pārliecību. Tāpēc pēc sarunas es Tev došu tik daudz laika, cik nepieciešams, lai visu apdomātu un pārrunātu ar ģimeni. Ja izvēlēsies sadarboties, es nekavējoties sākšu ceļojuma plānošanu, savukārt, ja nolemsi, ka tas šobrīd nav Tev, mēs tāpat paliksim labi paziņas. Jebkurā gadījumā Tu būsi ieguvis vērtīgas zināšanas, kas noderēs Tavos nākotnes braucienos."
+      }
+    ],
+    "bottomText1": "Profesionāla sadarbība ceļojumu plānošanā un tūrisma biznesa attīstībā ir balstīta uz savstarpēju uzticēšanos, caurspīdīgumu un individuālu pieeju. Kā Tavs personīgais mentors un ceļojumu konsultants es nodrošinu pilnu atbalstu ikvienā posmā – no pirmās Zoom prezentācijas līdz veiksmīgi realizētam sapņu ceļojumam un jaunu ienākumu avotu izveidei.",
+    "bottomText2": "Izvēloties sadarbību ar mani, Tu iegūsti ne tikai piekļuvi labākajiem tūrisma nozares rīkiem un ekskluzīvām cenām, bet arī drošības sajūtu un praktisku padomdevēju, kurš vienmēr ir viena zvana attālumā. Sāc savu ceļu uz lielāku brīvību jau šodien un pārliecinies, cik vienkārša un patīkama var būt gudra ceļošana!",
+    "toHome": "Uz sākumu"
+  },
+  "destinations": {
+    "toHome": "Uz sākumu",
+    "badge": "Skaistākās pasaules vietas",
+    "title": "Populārākie galamērķi",
+    "subtitle": "Esmu apkopojis dažus no iecienītākajiem ceļotāju galamērķiem. Katrs no tiem piedāvā unikālu pieredzi, krāšņu dabu un neizmirstamus iespaidus.",
+    "filterAll": "Visi",
+    "filterEurope": "Eiropa",
+    "filterExotic": "Eksotiskie",
+    "durationLabel": "Ilgums",
+    "viewLabel": "Skatīt →",
+    "noResults": "Nav atrasts neviens galamērķis šajā kategorijā.",
+    "resetFilter": "Rādīt visus",
+    "modalClose": "Aizvērt",
+    "modalDuration": "Ilgums:",
+    "modalPriceFrom": "Cena no:",
+    "modalRequestBtn": "Pieteikt konsultāciju par šo galamērķi",
+    "items": {
+      "turcija": {
+        "name": "Turcija",
+        "description": "Krāšņi austrumu tirgi, iespaidīgas Kapadokijas ainavas ar gaisa baloniem un siltā Vidusjūra. Perfekta atpūta un bagāta vēsture ikvienam.",
+        "duration": "7-10 dienas",
+        "tags": ["Viss iekļauts", "Pludmales", "Kultūra"]
+      },
+      "grieķija": {
+        "name": "Grieķija",
+        "description": "Balti namiņi ar ziliem jumtiem, gleznainas Egejas jūras salas un pasaules vēstures šūpulis Atēnās. Izbaudi izcilu grieķu virtuvi un dabu.",
+        "duration": "7 dienas",
+        "tags": ["Salas", "Vēsture", "Gleznaini"]
+      },
+      "ēģipte": {
+        "name": "Ēģipte",
+        "description": "Mistiskās piramīdas, varenais Nīlas krasts un viens no pasaules skaistākajiem koraļļu rifiem Sarkanajā jūrā. Lielisks siltums visu gadu.",
+        "duration": "7-9 dienas",
+        "tags": ["Koraļļu rifi", "Piramīdas", "Siltums"]
+      },
+      "spānija": {
+        "name": "Spānija",
+        "description": "Katalonijas arhitektūra, kaislīgais flamenko, saulainā Maljorka un gardās tapas. Spānija iedvesmo ar savu dzīvesprieku un dienvidu temperamentu.",
+        "duration": "7-12 dienas",
+        "tags": ["Pludmales", "Arhitektūra", "Tapas"]
+      },
+      "kipra": {
+        "name": "Kipra",
+        "description": "Afrodītes dzimtene ar bezgala zilām lagūnām un mājīgiem zvejnieku ciematiem. Ļoti saulains galamērķis ar izcili tīrām pludmalēm.",
+        "duration": "7 dienas",
+        "tags": ["Zilā lagūna", "Miers", "Saulains"]
+      },
+      "taizeme": {
+        "name": "Taizeme",
+        "description": "Eksotiskais Puketas skaistums, zeltainie budistu tempļi, tropiskie džungļi un neatkārtojamais ielu ēdiens. Maģiska Āzijas viesmīlība.",
+        "duration": "10-14 dienas",
+        "tags": ["Eksotika", "Tempļi", "Daba"]
+      },
+      "maldivu_salas": {
+        "name": "Maldīvu salas",
+        "description": "Tirkīzzils ūdens, baltas smiltis un luksusa mājiņas tieši virs ūdens. Absolūts miers, romantika un dabas skaistums tālu prom no ikdienas.",
+        "duration": "8-12 dienas",
+        "tags": ["Luksuss", "Miers", "Romantika"]
+      },
+      "dominikana": {
+        "name": "Dominikāna",
+        "description": "Karību jūras pērle ar nebeidzamām kokospalmu audzēm un sirdi sildošiem bačatas ritmiem. Paradīze, kur saule un jūra satiekas katru dienu.",
+        "duration": "10-12 dienas",
+        "tags": ["Karību jūra", "Eksotika", "Palmas"]
+      },
+      "aae": {
+        "name": "Apvienotie Arābu Emirāti",
+        "description": "Nākotnes arhitektūras pilsēta Dubaija tuksneša vidū, pasaules augstākie debesskrāpji un austrumu luksuss apvienojumā ar augstākajām tehnoloģijām.",
+        "duration": "7-8 dienas",
+        "tags": ["Luksuss", "Tuksnesis", "Arhitektūra"]
+      }
+    }
+  },
+  "faq": {
+    "toHome": "Uz sākumu",
+    "badge": "Atbildes uz jautājumiem",
+    "title": "Biežāk uzdotie jautājumi",
+    "subtitle": "Zemāk esmu apkopojis biežāk uzdotos jautājumus, lai sniegtu Tev maksimālu skaidrību par procesiem, laika patēriņu un nosacījumiem.",
+    "noAnswerTitle": "Neatradi atbildi uz savu jautājumu?",
+    "noAnswerDesc": "Ja Tev ir radušies kādi specifiski jautājumi, droši sazinies ar mani personīgi, rakstot e‑pastu vai aizpildot saziņas formu.",
+    "askBtn": "Uzdod jautājumu",
+    "items": [
+      { "question": "Vai man ir nepieciešama iepriekšēja pieredze?", "answer": "Nē. Iepriekšēja pieredze nav nepieciešama. Daudzi cilvēki sāk pilnīgi bez priekšzināšanām. Svarīgākais ir vēlme uzzināt ko jaunu, mācīties un būt atvērtam jaunām iespējām." },
+      { "question": "Cik daudz laika tas prasa?", "answer": "Tas ir atkarīgs no Tavām vēlmēm un iespējām. Lielākā daļa cilvēku sāk paralēli savam pamatdarbam un velta tam tik daudz laika, cik paši var un vēlas." },
+      { "question": "Vai Zoom prezentācija ir bez maksas?", "answer": "Jā. Dalība Zoom prezentācijā ir pilnīgi bez maksas un neuzliek nekādas saistības." },
+      { "question": "Vai pēc prezentācijas man būs kaut kas jāiegādājas?", "answer": "Nē. Prezentācijas mērķis ir iepazīstināt Tevi ar iespējām un atbildēt uz Taviem jautājumiem. Tikai pēc tam Tu pats vari izlemt, vai vēlies spert nākamo soli." },
+      { "question": "Kā notiek pirmā konsultācija?", "answer": "Pēc Zoom prezentācijas varat pieteikt individuālu sarunu ar mani. Tās laikā pārrunāsim Tavus jautājumus, intereses un mērķus, lai kopīgi izvērtētu, vai šī iespēja ir piemērota tieši Tev." },
+      { "question": "Vai man būs jāslēdz kāds līgums vai jāuzņemas saistības?", "answer": "Nē. Pirmais solis ir tikai iepazīšanās ar informāciju. Nekādi līgumi vai saistības netiek uzņemtas, kamēr pats neesi pieņēmis apzinātu lēmumu." },
+      { "question": "Vai varu sazināties ar Tevi arī pēc prezentācijas?", "answer": "Protams. Ja pēc prezentācijas rodas papildu jautājumi vai vēlies individuāli pārrunāt sev interesējošās tēmas, droši sazinies ar mani. Labprāt palīdzēšu un dalīšos savā pieredzē." },
+      { "question": "Kam šī iespēja ir vispiemērotākā?", "answer": "Tā ir piemērota cilvēkiem, kuri vēlas ceļot vairāk, iepazīt jaunus cilvēkus, attīstīt sevi un uzzināt par iespējām, kas var sniegt lielāku brīvību un papildu ienākumus. Nav nozīmes ne vecumam, ne iepriekšējai pieredzei – svarīgākais ir interese un vēlme uzzināt vairāk." }
+    ]
+  },
+  "blog": {
+    "toHome": "Uz sākumu",
+    "badge": "Pasaules apceļošanas stāsti",
+    "title": "Ceļojumu blogs",
+    "subtitle": "Lasi manus un mūsu kopienas ceļojumu stāstus, praktiskus padomus un iedvesmojošus piedzīvojumus no visas pasaules.",
+    "readMore": "Lasīt rakstu",
+    "sidebarPopular": "Populāri raksti",
+    "sidebarCategories": "Kategorijas",
+    "sidebarAll": "Visi raksti",
+    "posts": [
+      {
+        "id": "turcijas-slepenie-dargumi",
+        "title": "Turcijas slepenie dārgumi: kur pazūd tūristu pūļi",
+        "desc": "Visi zina Antāliju un Alanju, bet vai esi dzirdējis par Kabakas līci vai senajām Likijas pilsētām? Šajā rakstā atklāšu vietas, kur baudīt dabu un mieru.",
+        "content": "Turcija ir pārsteidzoša valsts, kas slēpj daudz vairāk par populārajiem 'Viss iekļauts' kūrortiem. Kamēr lielākā daļa tūristu izvēlas pavadīt laiku viesnīcu baseinos, dažu stundu braucienā atrodas neskarta daba, Kalni satiekas ar tirkīzzilu jūru. Viens no tādiem dārgumiem ir Kabakas līcis (Kabak Koyu) – idilliska vieta dabas mīļotājiem, kur nav lielu viesnīcu, bet ir mājīgi koka namiņi un telšu vietas. Vēl viens brīnums ir senā Likijas taka, kas stiepjas gar visu dienvidrietumu krastu, piedāvājot elpu aizraujošus skatus uz Vidusjūru un iespēju izpētīt tūkstošiem gadu senas kapenes un pilsētu drupas pilnīgā mierā. Izvēlies gudra ceļotāja ceļu un iepazīsti Turcijas patieso dvēseli!"
+      },
+      {
+        "id": "gudras-celosanas-pamati",
+        "title": "Kā ceļot 4 reizes gadā bez milzīga budžeta",
+        "desc": "Gudra ceļošana ir māksla izmantot pareizos rīkus un stratēģijas. Dalos ar saviem pārbaudītiem zelta likumiem, kas palīdz ietaupīt uz lidojumiem un naktsmītnēm.",
+        "content": "Ceļošana nav tikai miljonāru privilēģija. Patiesībā, pareizi plānojot un izmantojot mūsdienu platformu sniegtās iespējas, Tu vari ceļot daudz biežāk, nekā Tev šķiet. Pirmais zelta likums: esi elastīgs ar datumiem un galamērķiem. Dažreiz vienas dienas starpība lidojuma datumos var ietaupīt līdz pat 50% no biļetes cenas. Otrais likums: izmanto slēgtās ceļotāju platformas un kopienas priekšrocības. Šīs platformas piedāvā cenas, kas nav pieejamas publiski, jo tās strādā tieši ar pakalpojumu sniedzējiem. Trešais likums: nebaidies plānot pats. Pašu plānots ceļojums vienmēr ir elastīgāks, interesantāks un, galvenais, finansiāli izdevīgāks. Pievienojies mūsu kopienai, un es iemācīšu Tev visus šos noslēpumus!"
+      }
+    ],
+    "upcomingTitle": "Gatavojas publicēšanai",
+    "upcomingSubtitle": "Tuvākajā laikā mūsu blogā tiks publicēti jauni un aizraujoši raksti no mūsu ceļotājiem.",
+    "upcomingReadSoon": "Lasīt drīzumā",
+    "upcomingPosts": [
+      { "title": "Maldīvu salas par saprātīgu cenu – mīts vai realitāte?", "desc": "Pētām vietējo salu sniegtās iespējas un to, kā baudīt tirkīzzilu ūdeni un baltas smiltis bez tūkstošiem eiro tēriņiem." },
+      { "title": "Kāpēc Āzija maina cilvēka pasaules uztveri", "desc": "Personīgs stāsts par pirmo braucienu uz Taizemi, kultūras šoku, budisma filozofiju un ielu ēdiena kultūru." },
+      { "title": "Mugursomas pakošanas māksla: tikai nepieciešamais", "desc": "Praktiski ieteikumi, kā salikt mantas 7 dienu braucienam tikai rokas bagāžā, ietaupot laiku un naudu lidostā." },
+      { "title": "Tūrisma nākotne un digitālie nomadi", "desc": "Kā tehnoloģijas un darbs no mājām ir mainījis ceļošanas paradumus un kāpēc arvien vairāk cilvēku izvēlas dzīvot ceļā." }
+    ]
+  },
+  "contactPage": {
+    "toHome": "Uz sākumu",
+    "badge": "Saziņa un atrašanās vieta",
+    "title": "Kontakti",
+    "intro": "Esmu pieejams gan attālinātām konsultācijām, gan klātienes sarunām pēc iepriekšējas vienošanās. Izvēlies sev ērtāko saziņas veidu!",
+    "hoursTitle": "Saziņas Laiks",
+    "hoursDesc1": "Pirmdiena - Piektdiena",
+    "hoursDesc2": "09:00 - 19:00",
+    "locationTitle": "Atrašanās vieta",
+    "locationDesc1": "Rīga, Latvija",
+    "locationDesc2": "(Un attālināti visā pasaulē)",
+    "supportTitle": "Atbalsts ceļā",
+    "supportDesc1": "Maniem klientiem nodrošināts",
+    "supportDesc2": "atbalsts ceļojumu laikā."
+  },
+  "contactForm": {
+    "badge": "Saziņa un konsultācijas",
+    "title": "Sazinies ar Mārtiņu",
+    "subtitle": "Aizpildi formu zemāk un es sazināšos ar Tevi tuvāko 3 stundu laikā, lai atbildētu uz visiem jautājumiem.",
+    "successTitle": "Sūtījums saņemts!",
+    "successDesc": "Paldies! Tava ziņa ir veiksmīgi nosūtīta.",
+    "sendNew": "Sūtīt jaunu ziņu",
+    "labelName": "Vārds",
+    "placeholderName": "Ievadi savu vārdu",
+    "labelPhone": "Tālrunis",
+    "placeholderPhone": "Ievadi savu tālruņa numuru",
+    "labelEmail": "E-pasts",
+    "placeholderEmail": "Ievadi savu e-pastu",
+    "labelMessage": "Ziņa",
+    "placeholderMessage": "Uzraksti, ko tieši Tu vēlētos uzzināt vai pajautāt...",
+    "submitBtn": "Sūtīt ziņu",
+    "infoTitle": "Saziņas informācija",
+    "phone": "Tālrunis",
+    "email": "E-pasts"
+  },
+  "footer": {
+    "desc": "Ceļošana, kopiena, atbalsts un iespēja nopelnīt. Pievienojies mūsu ceļotāju kopienai, dodies uz sapņu galamērķiem ar mentora atbalstu un veido savu brīvo dzīvesveidu, gūstot papildu ienākumus.",
+    "linksTitle": "Noderīgas saites",
+    "contactsTitle": "Kontakti",
+    "copyright": "2026 © Visas tiesības aizsargātas | Travel with Martins"
+  },
+  "cookieNotice": {
+    "text": "Šī vietne izmanto sīkdatnes, lai nodrošinātu labāko lietošanas pieredzi.",
+    "accept": "Piekrītu",
+    "policy": "Sīkdatņu politika"
+  }
+}
