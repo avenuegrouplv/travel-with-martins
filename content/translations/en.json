@@ -137,19 +137,19 @@
         "duration": "7-10 days",
         "tags": ["All Inclusive", "Beaches", "Culture"]
       },
-      "grieķija": {
+      "griekija": {
         "name": "Greece",
         "description": "White houses with blue roofs, picturesque Aegean islands and the cradle of world history in Athens. Enjoy excellent Greek cuisine and nature.",
         "duration": "7 days",
         "tags": ["Islands", "History", "Picturesque"]
       },
-      "ēģipte": {
+      "egipte": {
         "name": "Egypt",
         "description": "Mystic pyramids, the mighty Nile coast and one of the world's most beautiful coral reefs in the Red Sea. Great warmth all year round.",
         "duration": "7-9 days",
         "tags": ["Coral reefs", "Pyramids", "Warmth"]
       },
-      "spānija": {
+      "spanija": {
         "name": "Spain",
         "description": "Catalan architecture, passionate flamenco, sunny Mallorca and delicious tapas. Spain inspires with its joy of life and southern temperament.",
         "duration": "7-12 days",

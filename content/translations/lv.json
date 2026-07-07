@@ -137,19 +137,19 @@
         "duration": "7-10 dienas",
         "tags": ["Viss iekļauts", "Pludmales", "Kultūra"]
       },
-      "grieķija": {
+      "griekija": {
         "name": "Grieķija",
         "description": "Balti namiņi ar ziliem jumtiem, gleznainas Egejas jūras salas un pasaules vēstures šūpulis Atēnās. Izbaudi izcilu grieķu virtuvi un dabu.",
         "duration": "7 dienas",
         "tags": ["Salas", "Vēsture", "Gleznaini"]
       },
-      "ēģipte": {
+      "egipte": {
         "name": "Ēģipte",
         "description": "Mistiskās piramīdas, varenais Nīlas krasts un viens no pasaules skaistākajiem koraļļu rifiem Sarkanajā jūrā. Lielisks siltums visu gadu.",
         "duration": "7-9 dienas",
         "tags": ["Koraļļu rifi", "Piramīdas", "Siltums"]
       },
-      "spānija": {
+      "spanija": {
         "name": "Spānija",
         "description": "Katalonijas arhitektūra, kaislīgais flamenko, saulainā Maljorka un gardās tapas. Spānija iedvesmo ar savu dzīvesprieku un dienvidu temperamentu.",
         "duration": "7-12 dienas",

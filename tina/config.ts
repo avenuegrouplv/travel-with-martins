@@ -176,8 +176,7 @@ export default defineConfig({
                   },
                   {
                     type: "object",
-                    name: "grie_ija",
-                    nameOverride: "grieķija",
+                    name: "griekija",
                     label: "Grieķija (Greece)",
                     fields: [
                       { type: "string", name: "name", label: "Name" },
@@ -188,8 +187,7 @@ export default defineConfig({
                   },
                   {
                     type: "object",
-                    name: "e_ipte",
-                    nameOverride: "ēģipte",
+                    name: "egipte",
                     label: "Ēģipte (Egypt)",
                     fields: [
                       { type: "string", name: "name", label: "Name" },
@@ -200,8 +198,7 @@ export default defineConfig({
                   },
                   {
                     type: "object",
-                    name: "sp_nija",
-                    nameOverride: "spānija",
+                    name: "spanija",
                     label: "Spānija (Spain)",
                     fields: [
                       { type: "string", name: "name", label: "Name" },
