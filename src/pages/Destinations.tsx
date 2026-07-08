@@ -1,336 +1,218 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
-import { motion, AnimatePresence } from "motion/react";
-import { 
-  Search, 
-  Clock, 
-  X, 
-  Compass,
-  Home
-} from "lucide-react";
-import SectionNavButtons from "../components/SectionNavButtons";
-import { POPULAR_DESTINATIONS, DestinationCard } from "../data/destinations";
-import { useLanguage } from "../context/LanguageContext";
-import { translations } from "../translations";
+import React, { useState, useMemo } from 'react';
+import { useLanguage } from '../context/LanguageContext';
+import { destinationsData, Destination } from '../data/destinations';
+import { Search, MapPin, Star, Calendar, X, Compass, Clock } from 'lucide-react';
 
-export default function Destinations() {
-  const { lang } = useLanguage();
-  const t = translations[lang].destinations;
+export const Destinations: React.FC = () => {
+  const { t, language } = useLanguage();
+  const [searchQuery, setSearchQuery] = useState('');
+  const [activeCategory, setActiveCategory] = useState<'all' | 'nature' | 'city' | 'beach' | 'adventure'>('all');
+  const [selectedDestination, setSelectedDestination] = useState<Destination | null>(null);
 
-  const [searchQuery, setSearchQuery] = useState("");
-  const [selectedTag, setSelectedTag] = useState("Visi");
-  const [activeLightbox, setActiveLightbox] = useState<DestinationCard | null>(null);
-
-  // Dabūjam unikālos tagus filtrēšanai
-  const allTags = ["Visi", "Viss iekļauts", "Pludmales", "Luksuss", "Miers", "Kultūra", "Eksotika", "Vēsture"];
-
-  const tagTranslations: Record<string, Record<string, string>> = {
-    "Visi": { LV: "Visi", EN: "All", RU: "Все" },
-    "Viss iekļauts": { LV: "Viss iekļauts", EN: "All Inclusive", RU: "Все включено" },
-    "Pludmales": { LV: "Pludmales", EN: "Beaches", RU: "Пляжи" },
-    "Luksuss": { LV: "Luksuss", EN: "Luxury", RU: "Люкс" },
-    "Miers": { LV: "Miers", EN: "Peace", RU: "Спокойствие" },
-    "Kultūra": { LV: "Kultūra", EN: "Culture", RU: "Культура" },
-    "Eksotika": { LV: "Eksotika", EN: "Exotic", RU: "Экзотика" },
-    "Vēsture": { LV: "Vēsture", EN: "History", RU: "История" }
-  };
-
-  const filteredDestinations = POPULAR_DESTINATIONS.filter((item) => {
-    const localizedItem = t.items[item.id as keyof typeof t.items] || {
-      name: item.name,
-      description: item.description,
-    };
-    const nameMatch = localizedItem.name.toLowerCase().includes(searchQuery.toLowerCase());
-    const descMatch = localizedItem.description.toLowerCase().includes(searchQuery.toLowerCase());
-    const matchesSearch = nameMatch || descMatch;
-    const matchesTag = selectedTag === "Visi" || item.tags.includes(selectedTag);
-    return matchesSearch && matchesTag;
-  });
-
-  const localizedActiveItem = activeLightbox ? (t.items[activeLightbox.id as keyof typeof t.items] || {
-    name: activeLightbox.name,
-    description: activeLightbox.description,
-    duration: activeLightbox.duration,
-    tags: activeLightbox.tags
-  }) : null;
-
-  const supportText = lang === "LV" 
-    ? `Ceļojot uz ${localizedActiveItem?.name}, Jums tiks nodrošināts pilns atbalsts, sākot no aviobiļešu un viesnīcu piemeklēšanas līdz vietējo pārgājienu un ekskursiju koordiniem. Šis galamērķis ir izvēlēts un pārbaudīts, balstoties uz reāliem klientu ieteikumiem un augstākajiem viesmīlības standartiem.`
-    : lang === "EN"
-    ? `When traveling to ${localizedActiveItem?.name}, you will be provided with full support, from flight and hotel selection to local hikes and excursion coordination. This destination is selected and tested based on real customer recommendations and the highest hospitality standards.`
-    : `При путешествии в ${localizedActiveItem?.name} вам будет предоставлена полная поддержка, от выбора авиабилетов и отелей до координации местных походов и экскурсий. Это направление выбрано и проверено на основе реальных рекомендаций клиентов и самых высоких стандартов гостеприимства.`;
-
-  const itineraryItems = lang === "LV" ? [
-    { label: "1. diena:", desc: "Lidojums, iekārtošanās viesnīcā un pirmā iepazīšanās ar vietējo pilsētvidi." },
-    { label: "2.-3. diena:", desc: "Aktīvās ekskursijas, vēsturisko vietu un dabas objektu apskate pieredzējuša gida pavadībā." },
-    { label: "4.-5. diena:", desc: "Brīvais laiks, vietējo ēdienu degustācijas, relaksācija un atpūta pludmalē." },
-    { label: "Pēdējā diena:", desc: "Suvenīru iegāde un mājupceļš ar neizmirstamām atmiņām." }
-  ] : lang === "EN" ? [
-    { label: "Day 1:", desc: "Flight, hotel check-in and first acquaintance with the local city environment." },
-    { label: "Days 2-3:", desc: "Active excursions, sightseeing of historical sites and natural objects guided by an experienced guide." },
-    { label: "Days 4-5:", desc: "Free time, local food tasting, relaxation and rest on the beach." },
-    { label: "Last Day:", desc: "Souvenir purchase and journey home with unforgettable memories." }
-  ] : [
-    { label: "День 1:", desc: "Перелет, заселение в отель и первое знакомство с местной городской средой." },
-    { label: "Дни 2-3:", desc: "Активные экскурсии, посещение исторических мест и природных объектов в сопровождении опытного гида." },
-    { label: "Дни 4-5:", desc: "Свободное время, дегустация местных блюд, релаксация и отдых на пляже." },
-    { label: "Последний день:", desc: "Покупка сувениров и обратный путь с незабываемыми воспоминаниями." }
+  const categories = [
+    { id: 'all', label: t('destinations.all') },
+    { id: 'nature', label: language === 'lv' ? 'Daba' : language === 'ru' ? 'Природа' : 'Nature' },
+    { id: 'city', label: language === 'lv' ? 'Pilsētas' : language === 'ru' ? 'Города' : 'Cities' },
+    { id: 'beach', label: language === 'lv' ? 'Pludmales' : language === 'ru' ? 'Пляжи' : 'Beaches' },
+    { id: 'adventure', label: language === 'lv' ? 'Piedzīvojumi' : language === 'ru' ? 'Приключения' : 'Adventures' }
   ];
 
+  const filteredDestinations = useMemo(() => {
+    return destinationsData.filter((dest) => {
+      const matchesCategory = activeCategory === 'all' || dest.category === activeCategory;
+      const query = searchQuery.toLowerCase();
+      const titleText = (dest.title[language] || dest.title['en'] || '').toLowerCase();
+      const descText = (dest.description[language] || dest.description['en'] || '').toLowerCase();
+      const locText = (dest.location[language] || dest.location['en'] || '').toLowerCase();
+      
+      const matchesSearch = titleText.includes(query) || descText.includes(query) || locText.includes(query);
+      return matchesCategory && matchesSearch;
+    });
+  }, [searchQuery, activeCategory, language]);
+
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 15 }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0 }}
-      transition={{ duration: 0.5 }}
-      className="bg-[#F7F7F7] min-h-screen pt-36 pb-24"
-    >
-      <div className="max-w-7xl mx-auto px-6 space-y-16">
-        
-        {/* Home navigācijas poga */}
-        <div className="flex justify-start">
-          <Link 
-            to="/" 
-            className="inline-flex items-center gap-2 px-5 py-2.5 bg-white border border-[#EAE6DD] rounded-full text-xs font-bold uppercase tracking-wider text-[#0D1B2A] hover:bg-[#0D1B2A] hover:text-white transition-all shadow-sm"
-          >
-            <Home className="w-3.5 h-3.5" />
-            <span>{t.toHome}</span>
-          </Link>
-        </div>
-
-        {/* Virsraksts un ievads */}
-        <div className="text-center flex flex-col items-center space-y-4 max-w-3xl mx-auto">
-          <span className="text-xs font-bold uppercase tracking-widest text-[#D4AF37] bg-[#0D1B2A]/5 px-3 py-1 rounded inline-block">
-            {t.badge}
-          </span>
-          <h1 className="text-4xl md:text-5xl font-display font-black tracking-tight text-[#0D1B2A] uppercase">
-            {t.title}
-          </h1>
-          <div className="w-16 h-1 bg-[#D4AF37] mx-auto mt-2" />
-          <p className="text-sm sm:text-base text-[#5A5854] leading-relaxed pt-4">
-            {t.subtitle}
-          </p>
-        </div>
-
-        {/* Meklēšanas un filtrēšanas josla */}
-        <div className="flex flex-col md:flex-row gap-4 items-center justify-between bg-white border border-[#EAE6DD] p-4 rounded-2xl shadow-sm">
-          <div className="relative w-full md:w-80 flex items-center bg-[#F7F7F7] border border-[#EAE6DD] rounded-xl px-4 py-2.5">
-            <Search className="w-4 h-4 text-[#8C8A84] flex-shrink-0 mr-2" />
-            <input
-              type="text"
-              placeholder={lang === "LV" ? "Meklēt galamērķi..." : lang === "EN" ? "Search destination..." : "Искать направление..."}
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              className="bg-transparent border-none outline-none text-xs sm:text-sm text-[#2C2B29] w-full placeholder-[#8C8A84]"
-            />
-          </div>
-
-          <div className="flex flex-wrap gap-2 justify-center">
-            {allTags.map((tag) => {
-              const label = tagTranslations[tag]?.[lang] || tag;
-              return (
-                <button
-                  key={tag}
-                  onClick={() => setSelectedTag(tag)}
-                  className={`px-3 py-1.5 rounded-full text-xs font-bold tracking-wide transition-all ${
-                    selectedTag === tag
-                      ? "bg-[#0D1B2A] text-[#D4AF37]"
-                      : "bg-[#F7F7F7] text-[#5A5854] border border-[#EAE6DD] hover:bg-[#F2ECE0]"
-                  }`}
-                >
-                  {label}
-                </button>
-              );
-            })}
-          </div>
-        </div>
-
-        {/* Galamērķu saraksts (kartītes) */}
-        {filteredDestinations.length === 0 ? (
-          <div className="text-center py-24 bg-white border border-[#EAE6DD] rounded-3xl p-8 max-w-xl mx-auto space-y-4">
-            <Compass className="w-12 h-12 text-[#8C8A84] mx-auto opacity-30 animate-spin-slow" />
-            <h3 className="font-display font-bold text-lg text-[#0D1B2A]">
-              {lang === "LV" ? "Nekas netika atrasts" : lang === "EN" ? "No results found" : "Ничего не найдено"}
-            </h3>
-            <p className="text-xs text-[#5A5854]">
-              {lang === "LV" ? "Pārbaudi meklējamo vārdu vai izvēlies citu filtru." : lang === "EN" ? "Check the search term or choose another filter." : "Проверьте поисковое слово или выберите другой фильтр."}
-            </p>
-            <button
-              onClick={() => { setSearchQuery(""); setSelectedTag("Visi"); }}
-              className="mt-4 px-5 py-2.5 bg-[#0D1B2A] text-white text-xs font-bold rounded-lg hover:bg-[#D4AF37] hover:text-[#0D1B2A] transition-colors"
-            >
-              {lang === "LV" ? "Notīrīt meklēšanu" : lang === "EN" ? "Clear Search" : "Очистить поиск"}
-            </button>
-          </div>
-        ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {filteredDestinations.map((item) => {
-              const localizedItem = t.items[item.id as keyof typeof t.items] || {
-                name: item.name,
-                description: item.description,
-                duration: item.duration,
-                tags: item.tags
-              };
-
-              return (
-                <article
-                  key={item.id}
-                  onClick={() => setActiveLightbox(item)}
-                  className="group bg-white border-2 border-[#EAE6DD] hover:border-[#D4AF37]/30 rounded-2xl overflow-hidden hover:shadow-md transition-all duration-300 flex flex-col justify-between cursor-pointer"
-                >
-                  {/* Attēls ar Hover & Zoom efektu */}
-                  <div className="relative aspect-video overflow-hidden bg-zinc-100">
-                    <img
-                      src={item.image}
-                      alt={localizedItem.name}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
-                    
-                    {/* Karodziņš un nosaukums augšējā kreisajā stūrī */}
-                    <span className="absolute top-3 left-3 bg-[#0D1B2A]/80 backdrop-blur-md text-[#D4AF37] px-2.5 py-0.5 rounded text-[10px] font-bold flex items-center gap-1">
-                      <span>{item.flag}</span>
-                      <span>{localizedItem.name}</span>
-                    </span>
-                  </div>
-
-                  {/* Kartītes apakša */}
-                  <div className="p-5 space-y-2.5 flex-1 flex flex-col justify-between">
-                    <div className="space-y-1.5">
-                      <div className="flex flex-wrap gap-1">
-                        {localizedItem.tags.slice(0, 2).map((tg) => (
-                          <span key={tg} className="text-[8px] font-bold text-[#8C8A84] bg-[#F7F7F7] border border-[#EAE6DD] px-1.5 py-0.5 rounded-full">
-                            {tg}
-                          </span>
-                        ))}
-                      </div>
-                      <h3 className="font-display font-bold text-sm sm:text-base text-[#0D1B2A] group-hover:text-[#D4AF37] transition-colors line-clamp-1 leading-snug">
-                        {localizedItem.name}
-                      </h3>
-                      <p className="text-xs text-[#5A5854] leading-relaxed line-clamp-2">
-                        {localizedItem.description}
-                      </p>
-                    </div>
-
-                    <div className="pt-3 border-t border-[#F2ECE0] flex items-center justify-between">
-                      <div>
-                        <span className="text-[9px] text-[#8C8A84] block font-bold uppercase tracking-wider leading-none">
-                          {t.durationLabel}
-                        </span>
-                        <span className="text-xs font-semibold text-[#0D1B2A]">{localizedItem.duration}</span>
-                      </div>
-                      <span className="text-[10px] font-bold text-[#D4AF37] uppercase tracking-wider group-hover:translate-x-1 transition-transform duration-300">
-                        {t.viewLabel}
-                      </span>
-                    </div>
-                  </div>
-                </article>
-              );
-            })}
-          </div>
-        )}
-
-        {/* Lightbox / Detalizēts apraksts ar galeriju */}
-        <AnimatePresence>
-          {activeLightbox && localizedActiveItem && (
-            <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
-              {/* Fona aizklājums */}
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 0.7 }}
-                exit={{ opacity: 0 }}
-                onClick={() => setActiveLightbox(null)}
-                className="absolute inset-0 bg-[#0D1B2A]"
-              />
-
-              {/* Lightbox saturs */}
-              <motion.div
-                initial={{ opacity: 0, scale: 0.95, y: 30 }}
-                animate={{ opacity: 1, scale: 1, y: 0 }}
-                exit={{ opacity: 0, scale: 0.95, y: 30 }}
-                className="relative bg-[#FAF9F5] text-[#2C2B29] rounded-2xl max-w-2xl w-full max-h-[85vh] overflow-y-auto shadow-2xl border border-[#EAE6DD]"
-              >
-                <button
-                  onClick={() => setActiveLightbox(null)}
-                  className="absolute top-4 right-4 p-2 bg-[#0D1B2A] text-[#D4AF37] hover:bg-[#D4AF37] hover:text-[#0D1B2A] rounded-full transition-colors z-10"
-                >
-                  <X className="w-5 h-5" />
-                </button>
-
-                {/* Attēls virsū */}
-                <div className="relative aspect-video w-full bg-[#0D1B2A]">
-                  <img
-                    src={activeLightbox.image}
-                    alt={localizedActiveItem.name}
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                  <div className="absolute bottom-6 left-6 text-white space-y-1">
-                    <span className="text-3xl">{activeLightbox.flag}</span>
-                    <h2 className="text-3xl font-display font-black tracking-tight uppercase">
-                      {localizedActiveItem.name}
-                    </h2>
-                  </div>
-                </div>
-
-                {/* Satura informācija */}
-                <div className="p-8 space-y-6">
-                  <div className="flex flex-wrap gap-4 text-xs font-bold uppercase tracking-wider text-[#5A5854]">
-                    <div className="bg-[#F2ECE0] py-2 px-3.5 rounded-lg flex items-center gap-1.5">
-                      <Clock className="w-4 h-4 text-[#D4AF37]" />
-                      <span>{t.modalDuration} {localizedActiveItem.duration}</span>
-                    </div>
-                  </div>
-
-                  <div className="space-y-4">
-                    <h3 className="text-lg font-display font-bold text-[#0D1B2A] border-b border-[#EAE6DD] pb-2">
-                      {lang === "LV" ? "Ceļojuma apraksts" : lang === "EN" ? "Trip Description" : "Описание путешествия"}
-                    </h3>
-                    <p className="text-[#5A5854] text-sm leading-relaxed">
-                      {localizedActiveItem.description}
-                    </p>
-                    <p className="text-[#5A5854] text-sm leading-relaxed">
-                      {supportText}
-                    </p>
-                  </div>
-
-                  <div className="space-y-3 bg-[#0D1B2A] text-white p-6 rounded-xl border border-[#234238]/40">
-                    <h4 className="font-display font-bold text-[#D4AF37] text-sm uppercase tracking-wider">
-                      {lang === "LV" ? "Ieteicamais ceļojuma plāns:" : lang === "EN" ? "Recommended travel itinerary:" : "Рекомендуемый план поездки:"}
-                    </h4>
-                    <ul className="text-xs space-y-2 text-[#B2B0A9] list-disc pl-4">
-                      {itineraryItems.map((item, idx) => (
-                        <li key={idx}><strong>{item.label}</strong> {item.desc}</li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  {/* Sazināties poga */}
-                  <div className="pt-4 flex justify-end">
-                    <button
-                      onClick={() => {
-                        setActiveLightbox(null);
-                        const contactForm = document.getElementById("sazina");
-                        if (contactForm) {
-                          contactForm.scrollIntoView({ behavior: "smooth" });
-                        } else {
-                          // redirect to contact form
-                          window.location.href = "/#/kontakti";
-                        }
-                      }}
-                      className="px-6 py-3 bg-[#D4AF37] text-[#0D1B2A] text-xs font-bold uppercase tracking-wider hover:bg-[#0D1B2A] hover:text-white transition-all rounded-none cursor-pointer"
-                    >
-                      {t.modalRequestBtn}
-                    </button>
-                  </div>
-                </div>
-              </motion.div>
-            </div>
-          )}
-        </AnimatePresence>
-
-        {/* Apakšējā navigācija */}
-        <SectionNavButtons />
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-12 animate-in fade-in duration-300">
+      {/* Header */}
+      <div className="text-center space-y-3">
+        <h1 className="text-4xl font-extrabold text-slate-900 tracking-tight">{t('destinations.title')}</h1>
+        <p className="text-sm text-slate-500 max-w-md mx-auto">{t('destinations.subtitle')}</p>
       </div>
-    </motion.div>
+
+      {/* Controls: Search and Filters */}
+      <div className="flex flex-col md:flex-row gap-6 justify-between items-center bg-white p-6 rounded-2xl shadow-xs border border-slate-100">
+        {/* Search Input */}
+        <div className="relative w-full md:max-w-md">
+          <Search size={18} className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" />
+          <input
+            type="text"
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            placeholder={t('destinations.search_placeholder')}
+            className="w-full pl-11 pr-4 py-3 bg-slate-50 border border-slate-100 focus:border-teal-500 focus:bg-white rounded-xl text-sm font-medium outline-hidden transition-all"
+          />
+          {searchQuery && (
+            <button 
+              onClick={() => setSearchQuery('')}
+              className="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600 cursor-pointer"
+            >
+              <X size={15} />
+            </button>
+          )}
+        </div>
+
+        {/* Category Filters */}
+        <div className="flex items-center gap-1.5 overflow-x-auto w-full md:w-auto pb-2 md:pb-0 scrollbar-none">
+          {categories.map((cat) => (
+            <button
+              key={cat.id}
+              onClick={() => setActiveCategory(cat.id as any)}
+              className={`px-4 py-2 rounded-xl text-xs font-bold whitespace-nowrap transition-all cursor-pointer ${
+                activeCategory === cat.id
+                  ? 'bg-teal-600 text-white shadow-xs'
+                  : 'bg-slate-50 text-slate-600 hover:bg-slate-100 hover:text-slate-900'
+              }`}
+            >
+              {cat.label}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      {/* Results Grid */}
+      {filteredDestinations.length === 0 ? (
+        <div className="text-center py-20 bg-white border border-slate-100 rounded-2xl space-y-3">
+          <div className="mx-auto w-12 h-12 bg-slate-50 rounded-xl flex items-center justify-center text-slate-400">
+            <Compass size={24} />
+          </div>
+          <p className="text-sm font-semibold text-slate-500">{t('destinations.no_results')}</p>
+        </div>
+      ) : (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {filteredDestinations.map((dest) => (
+            <div 
+              key={dest.id}
+              className="bg-white border border-slate-100 rounded-2xl overflow-hidden shadow-xs hover:shadow-md transition-all flex flex-col justify-between group"
+            >
+              {/* Image & Badges */}
+              <div className="relative h-56 overflow-hidden">
+                <img 
+                  src={dest.image} 
+                  alt={dest.title[language]} 
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <span className="absolute top-4 left-4 px-2.5 py-1 bg-white/95 backdrop-blur-xs text-slate-900 text-[10px] font-bold rounded-lg uppercase tracking-wider">
+                  {dest.categoryLabels[language]}
+                </span>
+                <div className="absolute top-4 right-4 px-2 py-0.5 bg-slate-900/80 backdrop-blur-xs text-amber-400 text-xs font-bold rounded-lg flex items-center gap-1">
+                  <Star size={11} className="fill-amber-400 stroke-amber-400" />
+                  <span>{dest.rating}</span>
+                </div>
+              </div>
+
+              {/* Content info */}
+              <div className="p-5 flex-1 flex flex-col justify-between space-y-4">
+                <div className="space-y-2">
+                  <div className="flex items-center gap-1 text-xs text-slate-400 font-semibold">
+                    <MapPin size={13} className="text-teal-600" />
+                    <span>{dest.location[language]}</span>
+                  </div>
+                  <h3 className="text-lg font-bold text-slate-900 leading-snug tracking-tight">
+                    {dest.title[language]}
+                  </h3>
+                  <p className="text-xs text-slate-500 leading-relaxed line-clamp-3">
+                    {dest.description[language]}
+                  </p>
+                </div>
+
+                <div className="pt-3 border-t border-slate-50 flex items-center justify-between text-[11px] font-bold">
+                  <span className="text-slate-400 uppercase tracking-wider flex items-center gap-1">
+                    <Calendar size={13} className="text-slate-400" />
+                    <span>{dest.bestTime[language]}</span>
+                  </span>
+                  <button
+                    onClick={() => setSelectedDestination(dest)}
+                    className="text-teal-600 hover:text-teal-700 cursor-pointer"
+                  >
+                    {t('destinations.read_more')} →
+                  </button>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
+
+      {/* Destination Detailed Modal */}
+      {selectedDestination && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-xs">
+          <div className="relative w-full max-w-2xl bg-white rounded-3xl shadow-2xl overflow-hidden animate-in fade-in zoom-in-95 duration-200">
+            {/* Image Header */}
+            <div className="relative h-72">
+              <img 
+                src={selectedDestination.image} 
+                alt={selectedDestination.title[language]} 
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
+              <button
+                onClick={() => setSelectedDestination(null)}
+                className="absolute top-4 right-4 p-2 bg-black/50 hover:bg-black/75 text-white rounded-full backdrop-blur-xs transition-colors cursor-pointer"
+              >
+                <X size={18} />
+              </button>
+              <div className="absolute bottom-6 left-6 right-6 text-white space-y-1">
+                <span className="px-2.5 py-1 bg-teal-600 text-[10px] font-bold rounded-lg uppercase tracking-wider">
+                  {selectedDestination.categoryLabels[language]}
+                </span>
+                <h3 className="text-2xl font-bold tracking-tight pt-1.5">{selectedDestination.title[language]}</h3>
+              </div>
+            </div>
+
+            {/* Detailed Info */}
+            <div className="p-6 md:p-8 space-y-6">
+              <div className="grid grid-cols-3 gap-4 border-b border-slate-100 pb-5 text-center">
+                <div className="space-y-1">
+                  <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">{t('destinations.category')}</span>
+                  <p className="text-sm font-bold text-slate-950 capitalize">{selectedDestination.categoryLabels[language]}</p>
+                </div>
+                <div className="space-y-1 border-x border-slate-100">
+                  <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Rating</span>
+                  <p className="text-sm font-bold text-slate-950 flex items-center justify-center gap-1">
+                    <Star size={14} className="fill-amber-400 stroke-amber-400" />
+                    <span>{selectedDestination.rating}</span>
+                  </p>
+                </div>
+                <div className="space-y-1">
+                  <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">{language === 'lv' ? 'Labākais laiks' : language === 'ru' ? 'Лучшее время' : 'Best Season'}</span>
+                  <p className="text-sm font-bold text-slate-950 flex items-center justify-center gap-1">
+                    <Clock size={14} className="text-slate-500" />
+                    <span>{selectedDestination.bestTime[language]}</span>
+                  </p>
+                </div>
+              </div>
+
+              <div className="space-y-3 text-sm text-slate-600 leading-relaxed">
+                <div className="flex items-center gap-1 text-xs font-bold text-teal-600 uppercase tracking-wider">
+                  <MapPin size={14} />
+                  <span>{selectedDestination.location[language]}</span>
+                </div>
+                <p className="font-semibold text-slate-800">{selectedDestination.description[language]}</p>
+                <p>{selectedDestination.details[language]}</p>
+              </div>
+
+              {/* Action Button */}
+              <div className="pt-4 border-t border-slate-100 flex justify-end">
+                <button
+                  onClick={() => setSelectedDestination(null)}
+                  className="px-6 py-3 bg-slate-950 hover:bg-slate-800 text-white font-bold text-xs rounded-xl transition-colors cursor-pointer"
+                >
+                  {language === 'lv' ? 'Aizvērt' : language === 'ru' ? 'Закрыть' : 'Close'}
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+    </div>
   );
-}
+};

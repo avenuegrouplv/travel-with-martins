@@ -1,51 +1,57 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
-import ScrollToTop from "./components/ScrollToTop";
-import Home from "./pages/Home";
-import Collaboration from "./pages/Collaboration";
-import Destinations from "./pages/Destinations";
-import FAQ from "./pages/FAQ";
-import Blog from "./pages/Blog";
-import ContactPage from "./pages/ContactPage";
-import CookiePolicy from "./pages/CookiePolicy";
-import { LanguageProvider } from "./context/LanguageContext";
-import SEO from "./components/SEO";
+import React, { useState } from 'react';
+import { LanguageProvider } from './context/LanguageContext';
+import { Header } from './components/Header';
+import { Footer } from './components/Footer';
+import { CookieConsent } from './components/CookieConsent';
+
+// Pages
+import { Home } from './pages/Home';
+import { About } from './pages/About';
+import { Destinations } from './pages/Destinations';
+import { Blog } from './pages/Blog';
+import { Collaboration } from './pages/Collaboration';
+import { Contacts } from './pages/Contacts';
+
+const AppContent: React.FC = () => {
+  const [activeTab, setActiveTab] = useState('home');
+
+  const renderActivePage = () => {
+    switch (activeTab) {
+      case 'home':
+        return <Home setActiveTab={setActiveTab} />;
+      case 'about':
+        return <About />;
+      case 'destinations':
+        return <Destinations />;
+      case 'blog':
+        return <Blog />;
+      case 'collab':
+        return <Collaboration setActiveTab={setActiveTab} />;
+      case 'contacts':
+        return <Contacts />;
+      default:
+        return <Home setActiveTab={setActiveTab} />;
+    }
+  };
+
+  return (
+    <div className="min-h-screen flex flex-col justify-between bg-slate-50">
+      <div>
+        <Header activeTab={activeTab} setActiveTab={setActiveTab} />
+        <main className="relative z-10">
+          {renderActivePage()}
+        </main>
+      </div>
+      <Footer setActiveTab={setActiveTab} />
+      <CookieConsent />
+    </div>
+  );
+};
 
 export default function App() {
   return (
     <LanguageProvider>
-      <Router>
-        {/* Dynamic SEO and Metatags Coordinator */}
-        <SEO />
-        <div className="min-h-screen bg-[#F7F7F7] text-[#2C2B29] font-sans antialiased flex flex-col justify-between">
-          {/* Scroll To Top helper on route changes */}
-          <ScrollToTop />
-          
-          {/* Persistent Sticky Navigation Header */}
-          <Header />
-
-          {/* Multi-page Routing Stage */}
-          <main className="flex-grow">
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/par-mani" element={<Home />} />
-              <Route path="/sadarbiba" element={<Collaboration />} />
-              <Route path="/galamerki" element={<Destinations />} />
-              <Route path="/buj" element={<FAQ />} />
-              <Route path="/blogs" element={<Blog />} />
-              <Route path="/kontakti" element={<ContactPage />} />
-              <Route path="/sikdatnu-politika" element={<CookiePolicy />} />
-              
-              {/* Fallback route - novirza uz sākumlapu */}
-              <Route path="*" element={<Home />} />
-            </Routes>
-          </main>
-
-          {/* Footer block with quick-links, follow buttons and policy modals */}
-          <Footer />
-        </div>
-      </Router>
+      <AppContent />
     </LanguageProvider>
   );
 }

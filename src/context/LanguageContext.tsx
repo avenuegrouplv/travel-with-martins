@@ -1,60 +1,79 @@
-import { createContext, useContext, useState, ReactNode, useEffect } from "react";
+import React, { createContext, useContext, useState } from 'react';
+import { translations, Language } from '../translations';
 
-export type Language = "LV" | "EN" | "RU";
-
-interface LanguageContextProps {
-  lang: Language;
-  setLang: (lang: Language) => void;
+interface LanguageContextType {
+  language: Language;
+  setLanguage: (lang: Language) => void;
+  t: (keyPath: string) => any;
 }
 
-const LanguageContext = createContext<LanguageContextProps | undefined>(undefined);
+const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
-export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [lang, setLangState] = useState<Language>(() => {
-    if (typeof window !== "undefined") {
-      const params = new URLSearchParams(window.location.search);
-      const queryLang = params.get("lang")?.toUpperCase();
-      if (queryLang === "LV" || queryLang === "EN" || queryLang === "RU") {
-        localStorage.setItem("app_lang", queryLang);
-        return queryLang as Language;
-      }
+export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  const [language, setLanguageState] = useState<Language>(() => {
+    const saved = localStorage.getItem('lang');
+    if (saved === 'lv' || saved === 'en' || saved === 'ru') {
+      return saved as Language;
     }
-    const stored = typeof window !== "undefined" ? localStorage.getItem("app_lang") : null;
-    if (stored === "LV" || stored === "EN" || stored === "RU") {
-      return stored as Language;
-    }
-    return "LV";
+    return 'lv';
   });
 
-  const setLang = (newLang: Language) => {
-    setLangState(newLang);
-    localStorage.setItem("app_lang", newLang);
+  const setLanguage = (lang: Language) => {
+    setLanguageState(lang);
+    localStorage.setItem('lang', lang);
   };
 
-  useEffect(() => {
-    // In case there is an update in other tabs or components
-    const handleStorage = (e: StorageEvent) => {
-      if (e.key === "app_lang" && e.newValue) {
-        if (e.newValue === "LV" || e.newValue === "EN" || e.newValue === "RU") {
-          setLangState(e.newValue as Language);
+  const t = (keyPath: string): any => {
+    const keys = keyPath.split('.');
+    let current: any = translations[language];
+
+    for (const key of keys) {
+      if (current && typeof current === 'object' && key in current) {
+        current = current[key];
+      } else {
+        // Fallback to English
+        let fallback: any = translations['en'];
+        let foundFallback = true;
+        for (const k of keys) {
+          if (fallback && typeof fallback === 'object' && k in fallback) {
+            fallback = fallback[k];
+          } else {
+            foundFallback = false;
+            break;
+          }
         }
+        if (foundFallback) return fallback;
+
+        // Fallback to Latvian
+        let fallbackLv: any = translations['lv'];
+        let foundFallbackLv = true;
+        for (const k of keys) {
+          if (fallbackLv && typeof fallbackLv === 'object' && k in fallbackLv) {
+            fallbackLv = fallbackLv[k];
+          } else {
+            foundFallbackLv = false;
+            break;
+          }
+        }
+        if (foundFallbackLv) return fallbackLv;
+
+        return keyPath;
       }
-    };
-    window.addEventListener("storage", handleStorage);
-    return () => window.removeEventListener("storage", handleStorage);
-  }, []);
+    }
+    return current;
+  };
 
   return (
-    <LanguageContext.Provider value={{ lang, setLang }}>
+    <LanguageContext.Provider value={{ language, setLanguage, t }}>
       {children}
     </LanguageContext.Provider>
   );
-}
+};
 
-export function useLanguage() {
+export const useLanguage = () => {
   const context = useContext(LanguageContext);
   if (!context) {
-    throw new Error("useLanguage must be used within a LanguageProvider");
+    throw new Error('useLanguage must be used within a LanguageProvider');
   }
   return context;
-}
+};
