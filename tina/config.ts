@@ -3,10 +3,13 @@ import { defineConfig } from "tinacms";
 // Tina Cloud branch configuration
 const branch = process.env.TINA_BRANCH || process.env.HEAD || "main";
 
+const clientId = process.env.TINA_CLIENT_ID && process.env.TINA_CLIENT_ID !== "null" && process.env.TINA_CLIENT_ID !== "undefined" ? process.env.TINA_CLIENT_ID : undefined;
+const token = process.env.TINA_TOKEN && process.env.TINA_TOKEN !== "null" && process.env.TINA_TOKEN !== "undefined" ? process.env.TINA_TOKEN : undefined;
+
 export default defineConfig({
   branch,
-  clientId: process.env.TINA_CLIENT_ID || null,
-  token: process.env.TINA_TOKEN || null,
+  clientId,
+  token,
 
   build: {
     outputFolder: "admin",
