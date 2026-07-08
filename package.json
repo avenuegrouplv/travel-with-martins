@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "tinacms dev -c \"vite --port=3000 --host=0.0.0.0\"",
+    "dev": "vite --port=3000 --host=0.0.0.0",
+    "dev:cms": "tinacms dev -c \"vite --port=3000 --host=0.0.0.0\"",
     "build": "vite build",
     "preview": "vite preview",
     "lint": "tsc --noEmit"
