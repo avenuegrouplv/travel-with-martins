@@ -1,0 +1,289 @@
+{
+  "title": "English (EN)",
+  "header": {
+    "home": "HOME",
+    "collab": "COOPERATION",
+    "destinations": "DESTINATIONS",
+    "faq": "FAQ",
+    "blog": "BLOG",
+    "contacts": "CONTACTS",
+    "contactBtn": "Contact Me"
+  },
+  "home": {
+    "heroSlides": [
+      {
+        "title": "Travel Independently & Earn",
+        "text": "Start traveling independently and build your free lifestyle with additional income",
+        "highlights": ["travel independently", "free lifestyle", "additional income"]
+      },
+      {
+        "title": "Lifestyle Change",
+        "text": "Discover how to turn traveling into your lifestyle and a real source of additional income",
+        "highlights": ["lifestyle", "additional income"]
+      },
+      {
+        "title": "Personal Mentorship",
+        "text": "Receive personal mentor support to travel independently and build your own business",
+        "highlights": ["mentor support", "build your own business"]
+      },
+      {
+        "title": "Freedom Without Borders",
+        "text": "Join the community to travel without borders, gain freedom and earn independently",
+        "highlights": ["Join the community", "without borders", "earn independently"]
+      },
+      {
+        "title": "Financial Independence",
+        "text": "Break prejudices about expensive leisure and embark on your path to financial freedom",
+        "highlights": ["Break prejudices", "financial freedom"]
+      }
+    ],
+    "quickStats": {
+      "countries": "Countries visited",
+      "projects": "Routes built",
+      "clients": "Happy clients",
+      "rating": "Client rating"
+    },
+    "aboutBadge": "About the Project",
+    "aboutTitle": "MY STORY & MISSION",
+    "aboutSubtitle": "WHY TRAVEL WITH MARTINS?",
+    "aboutIntro": "My name is Martins. I have always been looking for opportunities that allow people to live a fuller, smarter life with greater freedom of choice.",
+    "aboutBody": "In 2018, I focused on the travel industry. Since then, I have come to know not only beautiful places in the world, but also people, cultures, and opportunities that traveling can provide to everyone. Over time, I realized that travels are not just a vacation. They expand horizons, help make new friends, develop thinking, and often completely change one's outlook on life.",
+    "aboutQuote": "I have created the Travel with Martins project, where I help people change their lifestyle and travel more, choose the most suitable destinations, giving them the opportunity to gain greater freedom in life and at the same time earn extra income.",
+    "advantagesBadge": "Your Advantages",
+    "advantagesTitle": "WHY CHOOSE THIS OPPORTUNITY?",
+    "advantages": [
+      {
+        "title": "Better Prices",
+        "desc": "Get access to exclusive deals that you won't find on regular booking sites. Save money on every trip."
+      },
+      {
+        "title": "Mentor Support",
+        "desc": "I am your personal guide and counselor. I will help with tips, recommendations and answer all your questions."
+      },
+      {
+        "title": "Freedom & Income",
+        "desc": "It is not just about traveling – it is an opportunity to build your own business, work from anywhere in the world and earn extra income."
+      },
+      {
+        "title": "Community & Networking",
+        "desc": "Join a community of like-minded people who love to travel, share experiences and inspire each other for new achievements."
+      }
+    ],
+    "stepsBadge": "Just 4 simple steps",
+    "stepsTitle": "HOW TO START COOPERATING?",
+    "stepsSubtitle": "The path to your dream trip and a new lifestyle is easier than you think. Start today!",
+    "steps": [
+      { "title": "Apply for presentation", "desc": "Choose the most convenient time and sign up for a free online presentation." },
+      { "title": "Get clarity", "desc": "During the presentation, learn all about how the platform works and its advantages." },
+      { "title": "Individual conversation", "desc": "We will arrange an individual meeting to tailor the best solutions specifically for you." },
+      { "title": "Start traveling & earning", "desc": "Make a decision and join our team to travel more affordably and build your business." }
+    ],
+    "reviewsBadge": "Client reviews",
+    "reviewsTitle": "WHAT DO OTHER TRAVELERS SAY?",
+    "reviews": [
+      { "author": "Jānis Bērziņš", "role": "Entrepreneur", "text": "Thanks to Martins' support and recommendations, our family trip to Turkey was not only cheaper but also much better organized. Great cooperation and professional approach!" },
+      { "author": "Laura Kalniņa", "role": "Marketing specialist", "text": "I've always wanted to travel more but was afraid of high costs. This project completely changed my perspective! Now I can afford to travel 3-4 times a year and still earn an income." },
+      { "author": "Andris Zariņš", "role": "Freelancer", "text": "Great platform and even better mentor! Martins always helps with useful advice. The earning opportunity allows me to work from anywhere in the world." },
+      { "author": "Kristīne Ozola", "role": "Teacher", "text": "At first I was skeptical, but after the free Zoom presentation I realized this is a real opportunity. I am very satisfied with the booking savings and the friendly community!" }
+    ],
+    "instaTitle": "Our Travel Moments",
+    "instaSubtitle": "Follow our adventures and get inspired for your next destinations"
+  },
+  "collab": {
+    "badge": "Cooperation Process",
+    "title": "How does cooperation work?",
+    "subtitle": "Whether you are looking for your next trip or just want to know more about the opportunities, the process is simple, free and transparent.",
+    "steps": [
+      {
+        "title": "Apply for Zoom presentation",
+        "desc": "Choose the most convenient time and apply for an online presentation to learn more about the offered travel and growth opportunities. This meeting is an excellent first step to gain a general idea of how I work and what value you can get. During the presentation, I not only talk about exciting destinations but also about ways to travel more economically. The registration process takes just a few seconds, and the meeting link will be sent directly to your email. You do not need any prior knowledge or preparation – just connect and be inspired for new opportunities."
+      },
+      {
+        "title": "Get familiar with the information",
+        "desc": "During the presentation, get a full, clear idea of the processes and feel free to ask any questions. I will talk in detail about verified travel platforms, special offers and my individual support system. You will see real examples of how people around the world are already traveling more often and smarter, combining a hobby with earning income. The meeting takes place in a relaxed, friendly atmosphere where every participant's opinion and question is important. It is the best and safest way to dispel doubts and find out the truth first hand."
+      },
+      {
+        "title": "Book an individual conversation",
+        "desc": "After the presentation, we can talk individually to adapt the solutions more in detail specifically to your wishes and personal goals. Each of us has a different pace of life, budget and travel dreams, so the individual conversation helps find the path that suits you best. In the conversation we can talk about specific destinations, cost estimates or create a personalized action plan. This conversation is completely confidential and focuses on your personal growth and comfort. My priority is to provide you with maximum support so you feel secure about every next step."
+      },
+      {
+        "title": "Make an informed decision",
+        "desc": "Evaluate the information obtained and make the final decision completely independently – without any rush, pressure or persistence. I believe that the best decisions are those made with a calm mind and full confidence. Therefore, after the conversation, I will give you as much time as you need to think everything over and discuss it with your family. If you choose to cooperate, I will immediately start planning the trip, whereas if you decide it's not for you right now, we will still remain good acquaintances. In any case, you will have gained valuable knowledge that will come in handy in your future trips."
+      }
+    ],
+    "bottomText1": "Professional cooperation in travel planning and tourism business development is based on mutual trust, transparency and an individual approach. As your personal mentor and travel consultant, I provide full support at every stage – from the first Zoom presentation to a successfully realized dream trip and the creation of new income sources.",
+    "bottomText2": "By choosing to cooperate with me, you get not only access to the best tourism industry tools and exclusive prices, but also a sense of security and a practical advisor who is always just a call away. Start your path to greater freedom today and see how simple and pleasant smart travel can be!",
+    "toHome": "To Home"
+  },
+  "destinations": {
+    "toHome": "To Home",
+    "badge": "Most Beautiful Places in the World",
+    "title": "Popular Destinations",
+    "subtitle": "I have compiled some of the travelers' favorite destinations. Each of them offers a unique experience, gorgeous nature and unforgettable impressions.",
+    "filterAll": "All",
+    "filterEurope": "Europe",
+    "filterExotic": "Exotic",
+    "durationLabel": "Duration",
+    "viewLabel": "View →",
+    "noResults": "No destinations found in this category.",
+    "resetFilter": "Show all",
+    "modalClose": "Close",
+    "modalDuration": "Duration:",
+    "modalPriceFrom": "Price from:",
+    "modalRequestBtn": "Apply for consultation about this destination",
+    "items": {
+      "turcija": {
+        "name": "Turkey",
+        "description": "Colorful oriental markets, impressive landscapes of Cappadocia with hot air balloons and the warm Mediterranean Sea. Perfect relaxation and rich history for everyone.",
+        "duration": "7-10 days",
+        "tags": ["All Inclusive", "Beaches", "Culture"]
+      },
+      "griekija": {
+        "name": "Greece",
+        "description": "White houses with blue roofs, picturesque Aegean islands and the cradle of world history in Athens. Enjoy excellent Greek cuisine and nature.",
+        "duration": "7 days",
+        "tags": ["Islands", "History", "Picturesque"]
+      },
+      "egipte": {
+        "name": "Egypt",
+        "description": "Mystic pyramids, the mighty Nile coast and one of the world's most beautiful coral reefs in the Red Sea. Great warmth all year round.",
+        "duration": "7-9 days",
+        "tags": ["Coral reefs", "Pyramids", "Warmth"]
+      },
+      "spanija": {
+        "name": "Spain",
+        "description": "Catalan architecture, passionate flamenco, sunny Mallorca and delicious tapas. Spain inspires with its joy of life and southern temperament.",
+        "duration": "7-12 days",
+        "tags": ["Beaches", "Architecture", "Tapas"]
+      },
+      "kipra": {
+        "name": "Cyprus",
+        "description": "The birthplace of Aphrodite with infinitely blue lagoons and cozy fishing villages. A very sunny destination with exceptionally clean beaches.",
+        "duration": "7 days",
+        "tags": ["Blue Lagoon", "Peace", "Sunny"]
+      },
+      "taizeme": {
+        "name": "Thailand",
+        "description": "Exotic beauty of Phuket, golden Buddhist temples, tropical jungles and unique street food. Magical Asian hospitality.",
+        "duration": "10-14 days",
+        "tags": ["Exotic", "Temples", "Nature"]
+      },
+      "maldivu_salas": {
+        "name": "Maldives",
+        "description": "Turquoise water, white sand and luxury overwater bungalows. Absolute peace, romance and natural beauty far away from everyday life.",
+        "duration": "8-12 days",
+        "tags": ["Luxury", "Peace", "Romance"]
+      },
+      "dominikana": {
+        "name": "Donimican Republic",
+        "description": "The pearl of the Caribbean Sea with endless coconut groves and heartwarming bachata rhythms. A paradise where the sun and sea meet every day.",
+        "duration": "10-12 days",
+        "tags": ["Caribbean", "Exotic", "Palms"]
+      },
+      "aae": {
+        "name": "United Arab Emirates",
+        "description": "The city of future architecture Dubai in the middle of the desert, the world's tallest skyscrapers and oriental luxury combined with top technologies.",
+        "duration": "7-8 days",
+        "tags": ["Luxury", "Desert", "Architecture"]
+      }
+    }
+  },
+  "faq": {
+    "toHome": "To Home",
+    "badge": "Answers to Questions",
+    "title": "Frequently Asked Questions",
+    "subtitle": "Below I have compiled the most frequently asked questions to provide you with maximum clarity about processes, time consumption and terms.",
+    "noAnswerTitle": "Didn't find the answer to your question?",
+    "noAnswerDesc": "If you have any specific questions, feel free to contact me personally by writing an email or filling out the contact form.",
+    "askBtn": "Ask a Question",
+    "items": [
+      { "question": "Do I need any prior experience?", "answer": "No. Prior experience is not required. Many people start completely from scratch. The most important thing is the desire to learn something new, grow and be open to new opportunities." },
+      { "question": "How much time does it take?", "answer": "It depends on your wishes and capabilities. Most people start alongside their primary job and devote as much time to it as they can and want." },
+      { "question": "Is the Zoom presentation free?", "answer": "Yes. Participation in the Zoom presentation is completely free of charge and carries no obligations." },
+      { "question": "Will I have to purchase anything after the presentation?", "answer": "No. The purpose of the presentation is to introduce you to the opportunities and answer your questions. Only after that you can decide for yourself if you want to take the next step." },
+      { "question": "How does the first consultation work?", "answer": "After the Zoom presentation, you can apply for an individual conversation with me. During it, we will discuss your questions, interests and goals to jointly evaluate if this opportunity is right for you." },
+      { "question": "Will I have to sign any contract or assume obligations?", "answer": "No. The first step is just getting acquainted with the info. No contracts or obligations are assumed until you have made a conscious decision yourself." },
+      { "question": "Can I contact you also after the presentation?", "answer": "Of course. If additional questions arise after the presentation or if you want to individually discuss topics of interest, feel free to contact me. I will gladly help and share my experience." },
+      { "question": "Who is this opportunity best suited for?", "answer": "It is suitable for people who want to travel more, meet new people, develop themselves and learn about opportunities that can provide greater freedom and extra income. Neither age nor prior experience matters – interest and desire to learn more is what's most important." }
+    ]
+  },
+  "blog": {
+    "toHome": "To Home",
+    "badge": "World Travel Stories",
+    "title": "Travel Blog",
+    "subtitle": "Read my travel stories and those of our community, practical tips and inspiring adventures from all over the world.",
+    "readMore": "Read Post",
+    "sidebarPopular": "Popular Posts",
+    "sidebarCategories": "Categories",
+    "sidebarAll": "All Posts",
+    "posts": [
+      {
+        "id": "turcijas-slepenie-dargumi",
+        "title": "Secret treasures of Turkey: where tourist crowds disappear",
+        "desc": "Everyone knows Antalya and Alanya, but have you heard of Kabak Bay or the ancient Lycian cities? In this article, I will reveal places where you can enjoy nature and peace.",
+        "content": "Turkey is an amazing country that hides much more than popular 'All Inclusive' resorts. While most tourists choose to spend time in hotel pools, a few hours' drive away lies untouched nature, where mountains meet a turquoise sea. One of such treasures is Kabak Bay (Kabak Koyu) – an idyllic place for nature lovers, where there are no large hotels, but cozy wooden bungalows and campsite spots. Another wonder is the ancient Lycian Way, which stretches along the entire southwestern coast, offering breathtaking views of the Mediterranean and the opportunity to explore thousands of years old tombs and city ruins in complete peace. Choose the smart traveler's path and discover the true soul of Turkey!"
+      },
+      {
+        "id": "gudras-celosanas-pamati",
+        "title": "How to travel 4 times a year without a huge budget",
+        "desc": "Smart travel is the art of using the right tools and strategies. I share my verified gold rules that help save on flights and accommodation.",
+        "content": "Traveling is not a privilege reserved only for millionaires. Actually, with proper planning and utilizing the opportunities provided by modern platforms, you can travel much more often than you think. First golden rule: be flexible with dates and destinations. Sometimes a single day's difference in flight dates can save you up to 50% of the ticket price. Second rule: take advantage of closed traveler platforms and community benefits. These platforms offer rates not available publicly because they work directly with service providers. Third rule: do not be afraid to plan yourself. A self-planned trip is always more flexible, interesting and, most importantly, financially more advantageous. Join our community and I will teach you all these secrets!"
+      }
+    ],
+    "upcomingTitle": "Preparing for Publication",
+    "upcomingSubtitle": "In the near future, new and exciting articles from our travelers will be published on our blog.",
+    "upcomingReadSoon": "Read Soon",
+    "upcomingPosts": [
+      { "title": "Maldives at a reasonable price – myth or reality?", "desc": "We study the opportunities provided by local islands and how to enjoy turquoise water and white sand without spending thousands of euros." },
+      { "title": "Why Asia changes a person's perception of the world", "desc": "A personal story about the first trip to Thailand, culture shock, Buddhist philosophy and street food culture." },
+      { "title": "The art of backpack packing: only the essentials", "desc": "Practical recommendations on how to pack things for a 7-day trip in hand luggage only, saving time and money at the airport." },
+      { "title": "The future of tourism and digital nomads", "desc": "How technology and working from home have changed travel habits and why more and more people choose to live on the road." }
+    ]
+  },
+  "contactPage": {
+    "toHome": "To Home",
+    "badge": "Contact & Location",
+    "title": "Contacts",
+    "intro": "I am available for both remote consultations and face-to-face conversations by prior agreement. Choose the most convenient way to contact me!",
+    "hoursTitle": "Contact Hours",
+    "hoursDesc1": "Monday - Friday",
+    "hoursDesc2": "09:00 - 19:00",
+    "locationTitle": "Location",
+    "locationDesc1": "Riga, Latvia",
+    "locationDesc2": "(And remotely worldwide)",
+    "supportTitle": "Support on the Go",
+    "supportDesc1": "My clients are provided with",
+    "supportDesc2": "support during their travels."
+  },
+  "contactForm": {
+    "badge": "Contact & Consultations",
+    "title": "Get in Touch with Martins",
+    "subtitle": "Fill out the form below and I will contact you within the next 3 hours to answer all your questions.",
+    "successTitle": "Message received!",
+    "successDesc": "Thank you! Your message has been sent successfully.",
+    "sendNew": "Send new message",
+    "labelName": "Name",
+    "placeholderName": "Enter your name",
+    "labelPhone": "Phone Number",
+    "placeholderPhone": "Enter your phone number",
+    "labelEmail": "Email",
+    "placeholderEmail": "Enter your email",
+    "labelMessage": "Message",
+    "placeholderMessage": "Write what exactly you would like to know or ask...",
+    "submitBtn": "Send message",
+    "infoTitle": "Contact Information",
+    "phone": "Phone",
+    "email": "Email"
+  },
+  "footer": {
+    "desc": "Travel, community, support, and the opportunity to earn. Join our travel community, head to dream destinations with mentor support, and build your free lifestyle while earning additional income.",
+    "linksTitle": "Useful links",
+    "contactsTitle": "Contacts",
+    "copyright": "2026 © All rights reserved | Travel with Martins"
+  },
+  "cookieNotice": {
+    "text": "This site uses cookies to ensure the best user experience.",
+    "accept": "Accept",
+    "policy": "Cookie policy"
+  }
+}

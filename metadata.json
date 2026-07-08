@@ -1,6 +1,6 @@
 {
-  "name": "Latvijas Ceļotāja Blogs",
-  "description": "Ceļojumu blogs un interaktīvs galamērķu ceļvedis ar meklēšanu, sadarbības lapu un satura pārvaldību.",
+  "name": "Martins travel",
+  "description": "A modern, minimalist travel website template.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

@@ -1,0 +1,266 @@
+fragment TranslationsParts on Translations {
+  __typename
+  title
+  header {
+    __typename
+    home
+    collab
+    destinations
+    faq
+    blog
+    contacts
+    contactBtn
+  }
+  home {
+    __typename
+    heroSlides {
+      __typename
+      title
+      text
+      highlights
+    }
+    quickStats {
+      __typename
+      countries
+      projects
+      clients
+      rating
+    }
+    aboutBadge
+    aboutTitle
+    aboutSubtitle
+    aboutIntro
+    aboutBody
+    aboutQuote
+    advantagesBadge
+    advantagesTitle
+    advantages {
+      __typename
+      title
+      desc
+    }
+    stepsBadge
+    stepsTitle
+    stepsSubtitle
+    steps {
+      __typename
+      title
+      desc
+    }
+    reviewsBadge
+    reviewsTitle
+    reviews {
+      __typename
+      author
+      role
+      text
+    }
+    instaTitle
+    instaSubtitle
+  }
+  collab {
+    __typename
+    badge
+    title
+    subtitle
+    steps {
+      __typename
+      title
+      desc
+    }
+    bottomText1
+    bottomText2
+    toHome
+  }
+  destinations {
+    __typename
+    toHome
+    badge
+    title
+    subtitle
+    filterAll
+    filterEurope
+    filterExotic
+    durationLabel
+    viewLabel
+    noResults
+    resetFilter
+    modalClose
+    modalDuration
+    modalPriceFrom
+    modalRequestBtn
+    items {
+      __typename
+      turcija {
+        __typename
+        name
+        description
+        duration
+        tags
+      }
+      griekija {
+        __typename
+        name
+        description
+        duration
+        tags
+      }
+      egipte {
+        __typename
+        name
+        description
+        duration
+        tags
+      }
+      spanija {
+        __typename
+        name
+        description
+        duration
+        tags
+      }
+      kipra {
+        __typename
+        name
+        description
+        duration
+        tags
+      }
+      taizeme {
+        __typename
+        name
+        description
+        duration
+        tags
+      }
+      maldivu_salas {
+        __typename
+        name
+        description
+        duration
+        tags
+      }
+      dominikana {
+        __typename
+        name
+        description
+        duration
+        tags
+      }
+      aae {
+        __typename
+        name
+        description
+        duration
+        tags
+      }
+    }
+  }
+  faq {
+    __typename
+    toHome
+    badge
+    title
+    subtitle
+    noAnswerTitle
+    noAnswerDesc
+    askBtn
+    items {
+      __typename
+      question
+      answer
+    }
+  }
+  blog {
+    __typename
+    toHome
+    badge
+    title
+    subtitle
+    readMore
+    sidebarPopular
+    sidebarCategories
+    sidebarAll
+    posts {
+      __typename
+      id
+      title
+      desc
+      content
+    }
+    upcomingTitle
+    upcomingSubtitle
+    upcomingReadSoon
+    upcomingPosts {
+      __typename
+      title
+      desc
+    }
+  }
+  contactPage {
+    __typename
+    toHome
+    badge
+    title
+    intro
+    hoursTitle
+    hoursDesc1
+    hoursDesc2
+    locationTitle
+    locationDesc1
+    locationDesc2
+    supportTitle
+    supportDesc1
+    supportDesc2
+  }
+  contactForm {
+    __typename
+    badge
+    title
+    subtitle
+    successTitle
+    successDesc
+    sendNew
+    labelName
+    placeholderName
+    labelPhone
+    placeholderPhone
+    labelEmail
+    placeholderEmail
+    labelMessage
+    placeholderMessage
+    submitBtn
+    infoTitle
+    phone
+    email
+  }
+  footer {
+    __typename
+    desc
+    linksTitle
+    contactsTitle
+    copyright
+  }
+  cookieNotice {
+    __typename
+    text
+    accept
+    policy
+  }
+}
+
+fragment DestinationsParts on Destinations {
+  __typename
+  title
+  destinations {
+    __typename
+    id
+    name
+    flag
+    image
+    description
+    duration
+    price
+    tags
+  }
+}
