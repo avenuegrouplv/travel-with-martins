@@ -22,11 +22,6 @@ var config_default = defineConfig({
         label: "Translations (Valodas)",
         path: "content/translations",
         format: "json",
-        ui: {
-          itemProps: (item) => {
-            return { label: item?.title || item?._sys?.filename || "Valoda" };
-          }
-        },
         fields: [
           { type: "string", name: "title", label: "Valodas nosaukums (piem. Latvie\u0161u)", required: true },
           {
@@ -406,11 +401,6 @@ var config_default = defineConfig({
         label: "Destinations Cards (Galam\u0113r\u0137u kart\u012Btes)",
         path: "content/destinations",
         format: "json",
-        ui: {
-          itemProps: (item) => {
-            return { label: item?.title || item?._sys?.filename || "Galam\u0113r\u0137i" };
-          }
-        },
         fields: [
           { type: "string", name: "title", label: "Saraksta nosaukums", required: true },
           {
