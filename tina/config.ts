@@ -5,8 +5,9 @@ const branch = process.env.TINA_BRANCH || process.env.HEAD || "main";
 
 export default defineConfig({
   branch,
-  clientId: process.env.TINA_CLIENT_ID || null,
-  token: process.env.TINA_TOKEN || null,
+  clientId: process.env.TINA_CLIENT_ID || "local-id",
+  token: process.env.TINA_TOKEN || "local-token",
+  contentApiUrlOverride: (typeof window !== "undefined" && !process.env.TINA_CLIENT_ID) ? "/graphql" : undefined,
 
   build: {
     outputFolder: "admin",

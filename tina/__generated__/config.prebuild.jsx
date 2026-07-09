@@ -3,8 +3,9 @@ import { defineConfig } from "tinacms";
 var branch = process.env.TINA_BRANCH || process.env.HEAD || "main";
 var config_default = defineConfig({
   branch,
-  clientId: process.env.TINA_CLIENT_ID || null,
-  token: process.env.TINA_TOKEN || null,
+  clientId: process.env.TINA_CLIENT_ID || "local-id",
+  token: process.env.TINA_TOKEN || "local-token",
+  contentApiUrlOverride: typeof window !== "undefined" && !process.env.TINA_CLIENT_ID ? "/graphql" : void 0,
   build: {
     outputFolder: "admin",
     publicFolder: "public"

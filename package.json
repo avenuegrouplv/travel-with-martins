@@ -6,8 +6,8 @@
   "scripts": {
     "dev": "vite --port=3000 --host=0.0.0.0",
     "dev:cms": "tinacms dev -c \"vite --port=3000 --host=0.0.0.0\"",
-    "build": "vite build",
-    "build:cms": "node -e \"const { execSync } = require('child_process'); const cid = process.env.TINA_CLIENT_ID; if (!cid || cid === 'null' || cid === 'undefined') { console.log('Building CMS locally...'); execSync('tinacms build --local', { stdio: 'inherit' }); } else { console.log('Building CMS for TinaCloud...'); execSync('tinacms build --skip-cloud-checks', { stdio: 'inherit' }); }\" && vite build",
+    "build": "npm run build:cms",
+    "build:cms": "npx kill-port 9000 4001 || true; node -e \"const { execSync } = require('child_process'); const cid = process.env.TINA_CLIENT_ID; if (!cid || cid === 'null' || cid === 'undefined') { console.log('Building CMS locally...'); execSync('npx tinacms build --local --skip-cloud-checks', { stdio: 'inherit' }); } else { console.log('Building CMS for TinaCloud...'); execSync('npx tinacms build --skip-cloud-checks', { stdio: 'inherit' }); }\" && vite build",
     "preview": "vite preview",
     "clean": "rm -rf dist server.js",
     "lint": "tsc --noEmit"
