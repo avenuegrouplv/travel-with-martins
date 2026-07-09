@@ -3,11 +3,13 @@ import { defineConfig } from "tinacms";
 // Tina Cloud branch configuration
 const branch = process.env.TINA_BRANCH || process.env.HEAD || "main";
 
+const isLocal = process.env.TINA_PUBLIC_IS_LOCAL === "true" || !process.env.TINA_CLIENT_ID;
+
 export default defineConfig({
   branch,
-  clientId: process.env.TINA_CLIENT_ID || "local-id",
-  token: process.env.TINA_TOKEN || "local-token",
-  contentApiUrlOverride: (typeof window !== "undefined" && !process.env.TINA_CLIENT_ID) ? "/graphql" : undefined,
+  clientId: isLocal ? "local-id" : (process.env.TINA_CLIENT_ID || "local-id"),
+  token: isLocal ? "local-token" : (process.env.TINA_TOKEN || "local-token"),
+  contentApiUrlOverride: isLocal ? "/graphql" : undefined,
 
   build: {
     outputFolder: "admin",
